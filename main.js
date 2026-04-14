@@ -530,26 +530,6 @@
     btn.id = 'lang-toggle-btn';
     btn.className = 'lang-toggle-btn';
     btn.textContent = '中文';
-    btn.style.cssText = [
-      'background: transparent',
-      'border: 1.5px solid var(--color-accent)',
-      'color: var(--color-accent)',
-      'border-radius: 6px',
-      'padding: 4px 10px',
-      'font-family: var(--font-body)',
-      'font-size: 0.8rem',
-      'font-weight: 600',
-      'cursor: pointer',
-      'transition: all 0.2s',
-      'margin-left: 12px',
-      'white-space: nowrap'
-    ].join(';');
-    btn.addEventListener('mouseenter', function () {
-      btn.style.background = 'var(--color-accent-light)';
-    });
-    btn.addEventListener('mouseleave', function () {
-      btn.style.background = 'transparent';
-    });
     btn.addEventListener('click', function () {
       var cur = document.documentElement.dataset.lang || 'en';
       window.setLang(cur === 'zh' ? 'en' : 'zh');
