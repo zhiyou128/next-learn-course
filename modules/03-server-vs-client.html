@@ -1,0 +1,350 @@
+<section class="module" id="module-3" style="background: var(--color-bg)">
+  <div class="module-content">
+    <header class="module-header animate-in">
+      <span class="module-number">03</span>
+      <h1 class="module-title" data-i18n-key="m3-module-title" data-i18n-zh="服务器 vs 客户端 — 代码在哪里运行？" data-i18n-en="Server vs Client">服务器 vs 客户端 — 代码在哪里运行？</h1>
+      <p class="module-subtitle" data-i18n-key="m3-module-subtitle" data-i18n-zh="有些代码在后厨（服务器）运行，有些在你桌边（浏览器）运行" data-i18n-en="Some code runs in the kitchen (server), some at your table (browser)">有些代码在后厨（服务器）运行，有些在你桌边（浏览器）运行</p>
+    </header>
+
+    <div class="module-body">
+
+      <!-- ── SCREEN 1: The Restaurant Metaphor ── -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading" data-i18n-key="m3-s1-heading" data-i18n-zh="每个应用都有两个用餐区" data-i18n-en="Every App Has Two Dining Areas">每个应用都有两个用餐区</h2>
+
+        <div class="icon-rows">
+          <div class="icon-row">
+            <div class="icon-circle" style="background: var(--color-actor-2)">🏠</div>
+            <div>
+              <strong data-i18n-key="m3-s1-iconrow1-strong" data-i18n-zh="前台 — 浏览器（客户端）" data-i18n-en="Front of House — the Browser (Client)">前台 — 浏览器（客户端）</strong>
+              <p data-i18n-key="m3-s1-iconrow1-p" data-i18n-zh="用户坐的地方。他们看菜单、点击按钮、在表单中输入。快速且交互性强——但他们无法访问数据库或密钥。" data-i18n-en="Where your users sit. They see menus, click buttons, type in forms. Fast and interactive — but they can't access databases or secret keys.">用户坐的地方。他们看菜单、点击按钮、在表单中输入。快速且交互性强——但他们无法访问数据库或密钥。</p>
+            </div>
+          </div>
+          <div class="icon-row">
+            <div class="icon-circle" style="background: var(--color-actor-1)">👨‍🍳</div>
+            <div>
+              <strong data-i18n-key="m3-s1-iconrow2-strong" data-i18n-zh="后台 — 服务器" data-i18n-en="Back of House — the Server">后台 — 服务器</strong>
+              <p data-i18n-key="m3-s1-iconrow2-p" data-i18n-zh="食物制作的地方。可以访问一切——数据库、API、密钥。但离食客很远，所以对点击的响应较慢。" data-i18n-en="The kitchen where food is made. Has access to everything — databases, APIs, secrets. But it's far from the diners, so it's slower to respond to clicks.">食物制作的地方。可以访问一切——数据库、API、密钥。但离食客很远，所以对点击的响应较慢。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout callout-accent">
+          <div class="callout-icon">💡</div>
+          <div class="callout-content">
+            <strong class="callout-title" data-i18n-key="m3-s1-callout-title" data-i18n-zh="关键问题" data-i18n-en="The Key Question">关键问题</strong>
+            <p data-i18n-key="m3-s1-callout-p" data-i18n-zh="当你点击一个按钮时，决策是在你的桌边（浏览器）还是厨房（服务器）做出的？把代码放错地方会悄悄破坏功能。" data-i18n-en="When you click a button, does the decision happen at your table (browser) or in the kitchen (server)? Putting code in the wrong place silently breaks things.">当你点击一个按钮时，决策是在你的桌边（浏览器）还是厨房（服务器）做出的？把代码放错地方会悄悄破坏功能。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SCREEN 2: Server Components — The Default ── -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading" data-i18n-key="m3-s2-heading" data-i18n-zh="服务器组件是默认选项" data-i18n-en="Server Components Are the Default">服务器组件是默认选项</h2>
+
+        <p data-i18n-key="m3-s2-p1" data-i18n-zh="默认情况下，Next.js 中的每个服务器组件都在服务器上运行。不会为其发送任何客户端 JavaScript。" data-i18n-en="By default, every Server Component in Next.js runs on the server. No client-side JavaScript is sent for it.">默认情况下，Next.js 中的每个服务器组件都在服务器上运行。不会为其发送任何客户端 JavaScript。</p>
+
+        <div class="pattern-cards">
+          <div class="pattern-card" style="border-top-color: var(--color-actor-2)">
+            <div class="pattern-icon" style="background: var(--color-actor-2)">📊</div>
+            <h4 class="pattern-title" data-i18n-key="m3-s2-pattern1-title" data-i18n-zh="显示数据" data-i18n-en="Display Data">显示数据</h4>
+            <p class="pattern-desc" data-i18n-key="m3-s2-pattern1-desc" data-i18n-zh="从数据库获取数据、读取文件、调用 API——在服务器上做这些都很安全，密钥不会暴露。" data-i18n-en="Fetching from databases, reading files, calling APIs — all safe on the server where secrets stay hidden.">从数据库获取数据、读取文件、调用 API——在服务器上做这些都很安全，密钥不会暴露。</p>
+          </div>
+          <div class="pattern-card" style="border-top-color: var(--color-actor-1)">
+            <div class="pattern-icon" style="background: var(--color-actor-1)">🎨</div>
+            <h4 class="pattern-title" data-i18n-key="m3-s2-pattern2-title" data-i18n-zh="纯 UI" data-i18n-en="Pure UI">纯 UI</h4>
+            <p class="pattern-desc" data-i18n-key="m3-s2-pattern2-desc" data-i18n-zh="静态布局、字体排版、设计系统——任何不需要用户交互的渲染。" data-i18n-en="Static layouts, typography, design systems — anything that just renders without user interaction.">静态布局、字体排版、设计系统——任何不需要用户交互的渲染。</p>
+          </div>
+          <div class="pattern-card" style="border-top-color: var(--color-actor-3)">
+            <div class="pattern-icon" style="background: var(--color-actor-3)">🔒</div>
+            <h4 class="pattern-title" data-i18n-key="m3-s2-pattern3-title" data-i18n-zh="安全敏感" data-i18n-en="Security-Sensitive">安全敏感</h4>
+            <p class="pattern-desc" data-i18n-key="m3-s2-pattern3-desc" data-i18n-zh="任何使用 API 密钥、密码或不应该离开服务器的业务逻辑。" data-i18n-en="Anything using API keys, passwords, or business logic that should never leave the server.">任何使用 API 密钥、密码或不应该离开服务器的业务逻辑。</p>
+          </div>
+        </div>
+
+        <div class="callout callout-info">
+          <div class="callout-icon">🗄️</div>
+          <div class="callout-content">
+            <strong class="callout-title" data-i18n-key="m3-s2-callout-title" data-i18n-zh="须知" data-i18n-en="Good to Know">须知</strong>
+            <p data-i18n-key="m3-s2-callout-p" data-i18n-zh="你可以通过没有特殊标记来识别服务器组件——因为它是默认的。不需要指令。" data-i18n-en="You can spot a Server Component because it has no special marker — it's the default. No directive needed.">你可以通过没有特殊标记来识别服务器组件——因为它是默认的。不需要指令。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SCREEN 3: Code↔English — 'use client' directive ── -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading" data-i18n-key="m3-s3-heading" data-i18n-zh="当你需要交互性时：'use client'" data-i18n-en="When You Need Interactivity: 'use client'">当你需要交互性时：'use client'</h2>
+
+        <p data-i18n-key="m3-s3-p1" data-i18n-zh="有些组件需要响应点击、跟踪输入或与浏览器 API 通信。这时你需要添加 'use client' 指令。" data-i18n-en="Some components need to respond to clicks, track typing, or talk to browser APIs. That's when you add the 'use client' directive.">有些组件需要响应点击、跟踪输入或与浏览器 API 通信。这时你需要添加 'use client' 指令。</p>
+
+        <div class="translation-block animate-in">
+          <div class="translation-code">
+            <span class="translation-label">CODE</span>
+            <pre><code><span class="code-keyword">'use client';</span>
+<span class="code-comment">// This file runs in the BROWSER, not on the server</span>
+
+<span class="code-keyword">import</span> { lusitana } <span class="code-keyword">from</span> <span class="code-string">'@/app/ui/fonts'</span>;
+<span class="code-keyword">import</span> { AtSymbolIcon } <span class="code-keyword">from</span> <span class="code-string">'@heroicons/react/24/outline'</span>;
+
+<span class="code-keyword">export default function</span> <span class="code-function">LoginForm</span>() {
+  <span class="code-comment">// useState and event handlers live HERE</span>
+  <span class="code-keyword">return</span> (
+    &lt;<span class="code-tag">form</span> <span class="code-attr">className</span>=<span class="code-value">"space-y-3"</span>&gt;
+      {<span class="code-comment">/* form fields with onClick, onChange */</span>}
+    &lt;/<span class="code-tag">form</span>&gt;
+  );
+}</code></pre>
+          </div>
+          <div class="translation-english">
+            <span class="translation-label">PLAIN ENGLISH</span>
+            <div class="translation-lines">
+              <p class="tl" data-i18n-key="m3-s3-tl1" data-i18n-zh="<strong>'use client' 告诉 Next.js：</strong>「把这代码发送到浏览器。」" data-i18n-en="<strong>'use client' tells Next.js:</strong> &quot;Ship this code to the browser.&quot;"><strong>'use client' 告诉 Next.js：</strong>「把这代码发送到浏览器。」</p>
+              <p class="tl" data-i18n-key="m3-s3-tl2" data-i18n-zh="<strong>注释是给你的：</strong>让你一眼就知道这个文件在哪里运行。" data-i18n-en="<strong>The comment is for you:</strong> So you know at a glance where this file runs."><strong>注释是给你的：</strong>让你一眼就知道这个文件在哪里运行。</p>
+              <p class="tl" data-i18n-key="m3-s3-tl3" data-i18n-zh="<strong>导入字体：</strong>和服务器组件版本一样——这里没有区别。" data-i18n-en="<strong>Import fonts:</strong> Same as the Server Component version — no difference here."><strong>导入字体：</strong>和服务器组件版本一样——这里没有区别。</p>
+              <p class="tl" data-i18n-key="m3-s3-tl4" data-i18n-zh="<strong>函数是一样的</strong>——但现在它可以使用 useState、onClick 处理程序等。" data-i18n-en="<strong>The function is the same</strong> — but now it can use useState, onClick handlers, etc."><strong>函数是一样的</strong>——但现在它可以使用 useState、onClick 处理程序等。</p>
+              <p class="tl" data-i18n-key="m3-s3-tl5" data-i18n-zh="<strong>JSX 标记：</strong>表单本身看起来一样。只有能力不同。" data-i18n-en="<strong>JSX markup:</strong> The form itself looks identical. Only the capabilities differ."><strong>JSX 标记：</strong>表单本身看起来一样。只有能力不同。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout callout-accent">
+          <div class="callout-icon">💡</div>
+          <div class="callout-content">
+            <strong class="callout-title" data-i18n-key="m3-s3-callout-title" data-i18n-zh="关键洞察" data-i18n-en="Key Insight">关键洞察</strong>
+            <p data-i18n-key="m3-s3-callout-p" data-i18n-zh="默认情况下，Next.js App Router 中的所有组件都是服务器组件。只有当你需要交互性——点击处理程序、状态（useState）或浏览器 API 时，才添加 'use client'。" data-i18n-en="By default, all components in Next.js App Router are Server Components. Only add 'use client' when you need interactivity — click handlers, state (useState), or browser APIs.">默认情况下，Next.js App Router 中的所有组件都是服务器组件。只有当你需要交互性——点击处理程序、状态（useState）或浏览器 API 时，才添加 'use client'。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SCREEN 4: Layer Toggle Demo ── -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading" data-i18n-key="m3-s4-heading" data-i18n-zh="什么真正发送到浏览器？" data-i18n-en="What Actually Ships to the Browser?">什么真正发送到浏览器？</h2>
+
+        <p data-i18n-key="m3-s4-p1" data-i18n-zh="不是所有代码都会到达用户。以下是服务器组件保留给自己的内容。" data-i18n-en="Not everything in your code makes the journey to the user. Here's what the Server Component keeps to itself.">不是所有代码都会到达用户。以下是服务器组件保留给自己的内容。</p>
+
+        <div class="layer-demo">
+          <div class="layer-tabs">
+            <button class="layer-tab active" onclick="showLayer('server-only')" data-i18n-key="m3-s4-tab1" data-i18n-zh="仅服务器" data-i18n-en="Server Only">仅服务器</button>
+            <button class="layer-tab" onclick="showLayer('what-ships')" data-i18n-key="m3-s4-tab2" data-i18n-zh="发送什么到浏览器" data-i18n-en="What Ships to Browser">发送什么到浏览器</button>
+            <button class="layer-tab" onclick="showLayer('client-js')" data-i18n-key="m3-s4-tab3" data-i18n-zh="+ 客户端 JS" data-i18n-en="+ Client JS">+ 客户端 JS</button>
+          </div>
+          <div class="layer-viewport">
+            <div class="layer" id="layer-server-only" style="display:block">
+              <div style="background: var(--color-bg-code); padding: var(--space-6); font-family: var(--font-mono); font-size: var(--text-sm); color: #CDD6F4; line-height: 1.8;">
+                <span style="color: #CBA6F7;">// This stays on the server — NEVER reaches browser</span><br>
+                <span style="color: #CBA6F7;">const</span> dbPassword = <span style="color: #A6E3A1;">"super-secret-key-123"</span>;<br>
+                <span style="color: #CBA6F7;">await</span> <span style="color: #89B4FA;">fetchRevenue</span>();<br><br>
+                <span style="color: #6C7086;">// Database queries</span><br>
+                <span style="color: #CBA6F7;">const</span> customers = <span style="color: #CBA6F7;">await</span> <span style="color: #89B4FA;">db.query</span>(<span style="color: #A6E3A1;">"SELECT * FROM users"</span>);
+              </div>
+            </div>
+            <div class="layer" id="layer-what-ships" style="display:none">
+              <div style="background: var(--color-bg-code); padding: var(--space-6); font-family: var(--font-mono); font-size: var(--text-sm); color: #CDD6F4; line-height: 1.8;">
+                <span style="color: #CBA6F7;">// HTML and CSS arrive — the rendered result</span><br>
+                &lt;<span style="color: #F38BA8;">div</span> <span style="color: #F9E2AF;">class</span>=<span style="color: #A6E3A1;">"revenue-chart"</span>&gt;<br>
+                &nbsp;&nbsp;&lt;<span style="color: #F38BA8;">h2</span>&gt;Monthly Revenue&lt;/<span style="color: #F38BA8;">h2</span>&gt;<br>
+                &nbsp;&nbsp;&lt;<span style="color: #F38BA8;">svg</span>&gt;...chart...&lt;/<span style="color: #F38BA8;">svg</span>&gt;<br>
+                &lt;/<span style="color: #F38BA8;">div</span>&gt;<br><br>
+                <span style="color: #6C7086;">/* CSS styles */</span>
+              </div>
+            </div>
+            <div class="layer" id="layer-client-js" style="display:none">
+              <div style="background: var(--color-bg-code); padding: var(--space-6); font-family: var(--font-mono); font-size: var(--text-sm); color: #CDD6F4; line-height: 1.8;">
+                <span style="color: #CBA6F7;">// ONLY LoginForm's JS bundle ships</span><br>
+                <span style="color: #CBA6F7;">'use client'</span>;<br>
+                <span style="color: #CBA6F7;">export default function</span> <span style="color: #89B4FA;">LoginForm</span>() {<br>
+                &nbsp;&nbsp;<span style="color: #CBA6F7;">const</span> [state, setState] = <span style="color: #89B4FA;">useState</span>();<br>
+                &nbsp;&nbsp;<span class="code-keyword">return</span> &lt;<span style="color: #F38BA8;">form</span>&gt;...&lt;/<span style="color: #F38BA8;">form</span>&gt;;<br>
+                }
+              </div>
+            </div>
+          </div>
+          <p class="layer-description" id="layer-desc" data-i18n-key="m3-s4-layer-desc" data-i18n-zh="服务器组件将密钥、数据库和重型逻辑保留在服务器上。浏览器只收到 HTML、CSS 和交互式组件的 JavaScript。" data-i18n-en="Server Components keep secrets, databases, and heavy logic on the server. The browser only gets HTML, CSS, and the JavaScript for interactive components.">服务器组件将密钥、数据库和重型逻辑保留在服务器上。浏览器只收到 HTML、CSS 和交互式组件的 JavaScript。</p>
+        </div>
+      </section>
+
+      <!-- ── SCREEN 5: Group Chat Animation ── -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading" data-i18n-key="m3-s5-heading" data-i18n-zh="服务器 vs 客户端：谁来处理点击？" data-i18n-en="Server vs Client: Who Handles the Click?">服务器 vs 客户端：谁来处理点击？</h2>
+
+        <p data-i18n-key="m3-s5-p1" data-i18n-zh="观察当用户点击按钮时会发生什么——每个组件都认为应该由另一个来处理。" data-i18n-en="Watch what happens when a user clicks a button — each component thinks the other should handle it.">观察当用户点击按钮时会发生什么——每个组件都认为应该由另一个来处理。</p>
+
+        <div class="chat-window" id="chat-module3">
+          <div class="chat-messages">
+            <div class="chat-message" data-msg="0" data-sender="server" style="display:none">
+              <div class="chat-avatar" style="background: var(--color-actor-2)">S</div>
+              <div class="chat-bubble">
+                <span class="chat-sender" style="color: var(--color-actor-2)">Server Component</span>
+                <p data-i18n-key="m3-s5-chat1" data-i18n-zh="我准备好了数据。按钮应该只显示我发送的内容。" data-i18n-en="I've got the data ready. The button should just display what I sent.">我准备好了数据。按钮应该只显示我发送的内容。</p>
+              </div>
+            </div>
+            <div class="chat-message" data-msg="1" data-sender="client" style="display:none">
+              <div class="chat-avatar" style="background: var(--color-actor-1)">C</div>
+              <div class="chat-bubble">
+                <span class="chat-sender" style="color: var(--color-actor-1)">Client Component</span>
+                <p data-i18n-key="m3-s5-chat2" data-i18n-zh="没那么快。点击事件发生在浏览器里——那是我的领域。" data-i18n-en="Not so fast. Click events happen in the browser — that's MY domain.">没那么快。点击事件发生在浏览器里——那是我的领域。</p>
+              </div>
+            </div>
+            <div class="chat-message" data-msg="2" data-sender="server" style="display:none">
+              <div class="chat-avatar" style="background: var(--color-actor-2)">S</div>
+              <div class="chat-bubble">
+                <span class="chat-sender" style="color: var(--color-actor-2)">Server Component</span>
+                <p data-i18n-key="m3-s5-chat3" data-i18n-zh="没错——但我可以在页面加载前预取数据。然后你只管显示就行。" data-i18n-en="True — but I can PRE-FETCH the data before the page loads. Then you just show it.">没错——但我可以在页面加载前预取数据。然后你只管显示就行。</p>
+              </div>
+            </div>
+            <div class="chat-message" data-msg="3" data-sender="client" style="display:none">
+              <div class="chat-avatar" style="background: var(--color-actor-1)">C</div>
+              <div class="chat-bubble">
+                <span class="chat-sender" style="color: var(--color-actor-1)">Client Component</span>
+                <p data-i18n-key="m3-s5-chat4" data-i18n-zh="成交。你做重活（数据库）。我处理有趣的部分（点击、悬停、表单）。" data-i18n-en="Deal. You get the heavy lifting (databases). I handle the fun part (clicks, hovers, forms).">成交。你做重活（数据库）。我处理有趣的部分（点击、悬停、表单）。</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="chat-typing" id="chat-module3-typing" style="display:none">
+            <div class="chat-avatar" id="chat-module3-typing-avatar">?</div>
+            <div class="chat-typing-dots">
+              <span class="typing-dot"></span>
+              <span class="typing-dot"></span>
+              <span class="typing-dot"></span>
+            </div>
+          </div>
+
+          <div class="chat-controls">
+            <button class="btn chat-next-btn" data-i18n-key="m3-s5-btn-next" data-i18n-zh="下一条消息" data-i18n-en="Next Message">下一条消息</button>
+            <button class="btn chat-all-btn" data-i18n-key="m3-s5-btn-all" data-i18n-zh="播放全部" data-i18n-en="Play All">播放全部</button>
+            <button class="btn chat-reset-btn" data-i18n-key="m3-s5-btn-replay" data-i18n-zh="重播" data-i18n-en="Replay">重播</button>
+            <span class="chat-progress"></span>
+          </div>
+        </div>
+
+        <p data-i18n-key="m3-s5-p2" data-i18n-zh="这种分工很自然：服务器组件获取并准备数据。客户端组件处理事件处理程序和状态。" data-i18n-en="The split is natural: Server Components fetch and prepare data. Client Components handle event handlers and useState.">这种分工很自然：服务器组件获取并准备数据。客户端组件处理事件处理程序和状态。</p>
+      </section>
+
+      <!-- ── SCREEN 6: When to Use What ── -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading" data-i18n-key="m3-s6-heading" data-i18n-zh="何时画这条线" data-i18n-en="When to Draw the Line">何时画这条线</h2>
+
+        <div class="flow-steps">
+          <div class="flow-step">
+            <div class="flow-step-num">1</div>
+            <p data-i18n-key="m3-s6-step1" data-i18n-zh="它需要数据库吗？" data-i18n-en="Does it need a database?">它需要数据库吗？</p>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">
+            <div class="flow-step-num">2</div>
+            <p data-i18n-key="m3-s6-step2" data-i18n-zh="它使用密钥或 API 密钥吗？" data-i18n-en="Does it use secrets or API keys?">它使用密钥或 API 密钥吗？</p>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">
+            <div class="flow-step-num">3</div>
+            <p data-i18n-key="m3-s6-step3" data-i18n-zh="它响应点击或输入吗？" data-i18n-en="Does it respond to clicks or typing?">它响应点击或输入吗？</p>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">
+            <div class="flow-step-num">4</div>
+            <p data-i18n-key="m3-s6-step4" data-i18n-zh="它使用仅浏览器的 API 吗？" data-i18n-en="Does it use browser-only APIs?">它使用仅浏览器的 API 吗？</p>
+          </div>
+        </div>
+
+        <p data-i18n-key="m3-s6-p1" data-i18n-zh="步骤 1-2 → <strong>服务器组件</strong>（默认）。步骤 3-4 → <strong>'use client'</strong>。" data-i18n-en="Steps 1-2 → <strong>Server Component</strong> (default). Steps 3-4 → <strong>'use client'</strong>.">步骤 1-2 → <strong>服务器组件</strong>（默认）。步骤 3-4 → <strong>'use client'</strong>。</p>
+
+        <div class="badge-list">
+          <div class="badge-item">
+            <code class="badge-code">fetchRevenue()</code>
+            <span class="badge-desc" data-i18n-key="m3-s6-badge1" data-i18n-zh="服务器组件 — 数据库访问，不向浏览器发送 JavaScript" data-i18n-en="Server Component — database access, no JavaScript shipped to browser">服务器组件 — 数据库访问，不向浏览器发送 JavaScript</span>
+          </div>
+          <div class="badge-item">
+            <code class="badge-code">onClick={handleSubmit}</code>
+            <span class="badge-desc" data-i18n-key="m3-s6-badge2" data-i18n-zh="客户端组件 — 事件处理程序需要 'use client'" data-i18n-en="Client Component — event handlers need 'use client'">客户端组件 — 事件处理程序需要 'use client'</span>
+          </div>
+          <div class="badge-item">
+            <code class="badge-code">useState, useEffect</code>
+            <span class="badge-desc" data-i18n-key="m3-s6-badge3" data-i18n-zh="客户端组件 — 这些是只在浏览器中工作的钩子" data-i18n-en="Client Component — these are hooks that only work in the browser">客户端组件 — 这些是只在浏览器中工作的钩子</span>
+          </div>
+          <div class="badge-item">
+            <code class="badge-code">window.innerWidth</code>
+            <span class="badge-desc" data-i18n-key="m3-s6-badge4" data-i18n-zh="客户端组件 — 服务器上不存在的浏览器 API" data-i18n-en="Client Component — browser API that doesn't exist on the server">客户端组件 — 服务器上不存在的浏览器 API</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SCREEN 7: Quiz ── -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading" data-i18n-key="m3-s7-heading" data-i18n-zh="测试你的理解" data-i18n-en="Test Your Understanding">测试你的理解</h2>
+
+        <div class="quiz-container" id="quiz-module3">
+          <div class="quiz-question-block"
+               data-correct="option-b"
+               data-explanation-right="Exactly — useState is a React hook that only works in the browser. Any component using it needs 'use client'."
+               data-explanation-wrong="Not quite. useState is a hook that tracks values between renders — it needs to run in the browser, so it requires 'use client'.">
+            <h3 class="quiz-question" data-i18n-key="m3-s7-q1" data-i18n-zh="你需要追踪复选框是否被选中的组件。它需要 'use client' 吗？" data-i18n-en="You need a component that tracks whether a checkbox is checked. Does it need 'use client'?">你需要追踪复选框是否被选中的组件。它需要 'use client' 吗？</h3>
+            <div class="quiz-options">
+              <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span data-i18n-key="m3-s7-q1-a" data-i18n-zh="不需要 — 服务器可以追踪任何状态" data-i18n-en="No — the server can track any state">不需要 — 服务器可以追踪任何状态</span>
+              </button>
+              <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span data-i18n-key="m3-s7-q1-b" data-i18n-zh="需要 — useState 只在客户端组件中工作" data-i18n-en="Yes — useState only works in Client Components">需要 — useState 只在客户端组件中工作</span>
+              </button>
+              <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span data-i18n-key="m3-s7-q1-c" data-i18n-zh="取决于你有多少用户" data-i18n-en="Depends on how many users you have">取决于你有多少用户</span>
+              </button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question-block"
+               data-correct="option-a"
+               data-explanation-right="Correct! Database queries run on the server — it has direct access to the database and keeps credentials secure."
+               data-explanation-wrong="Think about where the database lives and who has credentials. The server has direct database access; the browser would need an API to proxy requests.">
+            <h3 class="quiz-question" data-i18n-key="m3-s7-q2" data-i18n-zh="一个组件从数据库显示客户名称列表。这个逻辑应该放在哪里？" data-i18n-en="A component displays a list of customer names from the database. Where should that logic live?">一个组件从数据库显示客户名称列表。这个逻辑应该放在哪里？</h3>
+            <div class="quiz-options">
+              <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span data-i18n-key="m3-s7-q2-a" data-i18n-zh="服务器组件 — 数据库在服务器端" data-i18n-en="Server Component — databases are server-side">服务器组件 — 数据库在服务器端</span>
+              </button>
+              <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span data-i18n-key="m3-s7-q2-b" data-i18n-zh="客户端组件 — 用户需要看到数据" data-i18n-en="Client Component — users need to see the data">客户端组件 — 用户需要看到数据</span>
+              </button>
+              <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span data-i18n-key="m3-s7-q2-c" data-i18n-zh="两者都有 — 在它们之间分割查询" data-i18n-en="Both — split the query between them">两者都有 — 在它们之间分割查询</span>
+              </button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question-block"
+               data-correct="option-c"
+               data-explanation-right="Exactly! The component itself stays a Server Component — only the tiny button part needs 'use client'. Don't throw away all the server benefits."
+               data-explanation-wrong="Careful — 'use client' is contagious. Once a component is a Client Component, all its children become Client Components too. Consider making just the button a separate Client Component.">
+            <h3 class="quiz-question" data-i18n-key="m3-s7-q3" data-i18n-zh="你有一个从数据库读取数据并有提交按钮的表单。你需要给整个表单添加 'use client' 吗？" data-i18n-en="You have a form that reads from a database AND has a submit button. Do you add 'use client' to the whole form?">你有一个从数据库读取数据并有提交按钮的表单。你需要给整个表单添加 'use client' 吗？</h3>
+            <div class="quiz-options">
+              <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span data-i18n-key="m3-s7-q3-a" data-i18n-zh="是的 — 一个 'use client' 更简单" data-i18n-en="Yes — one 'use client' is simpler">是的 — 一个 'use client' 更简单</span>
+              </button>
+              <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span data-i18n-key="m3-s7-q3-b" data-i18n-zh="不 — 全部保留在服务器上" data-i18n-en="No — keep everything on the server">不 — 全部保留在服务器上</span>
+              </button>
+              <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span data-i18n-key="m3-s7-q3-c" data-i18n-zh="分开 — 表单容器是服务器，按钮是客户端" data-i18n-en="Split it — form container is Server, button is Client">分开 — 表单容器是服务器，按钮是客户端</span>
+              </button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <button class="quiz-check-btn" onclick="checkQuiz('quiz-module3')" data-i18n-key="m3-s7-btn-check" data-i18n-zh="检查答案" data-i18n-en="Check Answers">检查答案</button>
+          <button class="quiz-reset-btn" onclick="resetQuiz('quiz-module3')" data-i18n-key="m3-s7-btn-retry" data-i18n-zh="再试一次" data-i18n-en="Try Again">再试一次</button>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</section>

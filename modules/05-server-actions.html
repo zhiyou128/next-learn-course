@@ -1,0 +1,501 @@
+<section class="module" id="module-5" style="background: var(--color-bg);">
+
+  <!-- ─────────────────────────────────────────────
+       MODULE HEADER
+  ───────────────────────────────────────────── -->
+  <header class="module-header">
+    <div class="module-number">05</div>
+    <h1 class="module-title" data-i18n-key="m5-title" data-i18n-zh="Server Actions — 让事情发生" data-i18n-en="Server Actions">Server Actions</h1>
+    <p class="module-subtitle" data-i18n-key="m5-subtitle" data-i18n-zh="用户如何创建、更新和删除数据" data-i18n-en="How users create, update, and delete data">How users create, update, and delete data</p>
+  </header>
+
+  <!-- ─────────────────────────────────────────────
+       SCREEN 1 — The Other Half of the Story
+  ───────────────────────────────────────────── -->
+  <div class="screen" id="mod5-screen-1">
+
+    <div class="screen-intro animate-in">
+      <h2 class="screen-title" data-i18n-key="m5s1-heading" data-i18n-zh="获取数据只是故事的一半" data-i18n-en="Fetching data is half the story">Fetching data is half the story</h2>
+      <p data-i18n-key="m5s1-p1" data-i18n-zh="另一半呢？当用户创建发票、编辑客户或删除记录时。在 Next.js 中，Server Actions 处理所有这些操作。" data-i18n-en="The other half? When a user creates an invoice, edits a customer, or deletes a record. In Next.js, Server Actions handle all of it.">The other half? When a user creates an invoice, edits a customer, or deletes a record. In Next.js, <span class="term" data-definition="A Server Action is a function that runs on the server — it receives form data, validates it, writes to the database, and can redirect the user or refresh what's on screen.">Server Actions</span> handle all of it.</p>
+    </div>
+
+    <div class="icon-row animate-in delay-1">
+      <div class="icon-circle" style="background: var(--color-actor-1)">📥</div>
+      <div>
+        <strong data-i18n-key="m5s1-strong1" data-i18n-zh="你已经知道读取路径" data-i18n-en="You already know the read path">You already know the read path</strong>
+        <p data-i18n-key="m5s1-p2" data-i18n-zh="数据从数据库流到页面——这就是数据获取。你之前构建的每个页面都是如此。" data-i18n-en="Data flows from the database up to the page — that's data fetching. Every page you've built so far.">Data flows from the database up to the page — that's <span class="term" data-definition="Data Fetching means requesting information from a database or API — like looking up a word in a dictionary.">data fetching</span>. Every page you've built so far.</p>
+      </div>
+    </div>
+
+    <div class="icon-row animate-in delay-2">
+      <div class="icon-circle" style="background: var(--color-actor-2)">📤</div>
+      <div>
+        <strong data-i18n-key="m5s1-strong2" data-i18n-zh="Server Actions 添加了写入路径" data-i18n-en="Server Actions add the write path">Server Actions add the write path</strong>
+        <p data-i18n-key="m5s1-p3" data-i18n-zh="数据从页面向下流动到数据库——创建、更新或删除记录。同样的门户，反向使用。" data-i18n-en="Data flows from the page down to the database — creating, updating, or deleting records. The same portal, reversed.">Data flows from the page down to the database — creating, updating, or deleting records. The same portal, reversed.</p>
+      </div>
+    </div>
+
+    <div class="callout callout-accent animate-in delay-3">
+      <div class="callout-icon">💡</div>
+      <div class="callout-content">
+        <strong class="callout-title" data-i18n-key="m5s1-callout-title" data-i18n-zh="为什么这在 AI 时代很重要" data-i18n-en="Why this matters with AI">Why this matters with AI</strong>
+        <p data-i18n-key="m5s1-callout-p" data-i18n-zh="AI 编程助手经常为变更操作编写单独的 API 路由和获取调用。在 Next.js App Router 中，Server Actions 是惯用模式。了解这一点有助于你引导 AI 走向正确的架构。" data-i18n-en="AI coding agents often write separate API routes + fetch calls for mutations. In Next.js App Router, Server Actions are the idiomatic pattern. Knowing this helps you guide AI toward the right architecture.">AI coding agents often write separate API routes + fetch calls for mutations. In Next.js App Router, <span class="term" data-definition="Server Actions are the idiomatic way to handle database mutations in Next.js App Router — simpler code, less network overhead than separate API routes.">Server Actions</span> are the idiomatic pattern. Knowing this helps you guide AI toward the right architecture.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ─────────────────────────────────────────────
+       SCREEN 2 — The Suggestion Box Metaphor
+  ───────────────────────────────────────────── -->
+  <div class="screen" id="mod5-screen-2">
+
+    <div class="screen-intro animate-in">
+      <h2 class="screen-title" data-i18n-key="m5s2-heading" data-i18n-zh="建议箱的比喻" data-i18n-en="The suggestion box metaphor">The suggestion box metaphor</h2>
+      <p data-i18n-key="m5s2-p1" data-i18n-zh="想象一家餐厅有一个建议箱。顾客填写卡片（表单提交），投入其中，然后离开。幕后，员工取出卡片、阅读并更新预订记录。顾客从不观看厨房工作——他们只得到结果。" data-i18n-en="Imagine a restaurant with a suggestion box. A customer fills out a card (the form submission), drops it in, and walks away. Behind the scenes, staff retrieve the card, read it, and update the reservation book. The customer never watches the kitchen work — they just get a result.">Imagine a restaurant with a <span class="term" data-definition="A suggestion box is a locked box where customers drop in ideas or complaints — staff retrieve them later and take action based on what's inside.">suggestion box</span>. A customer fills out a card (the <span class="term" data-definition="Form submission is when a user clicks a button to send their form data to the server — like mailing a postcard.">form submission</span>), drops it in, and walks away. Behind the scenes, staff retrieve the card, read it, and update the reservation book. The customer never watches the kitchen work — they just get a result.</p>
+    </div>
+
+    <div class="step-cards animate-in delay-1">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <strong data-i18n-key="m5s2-step1-strong" data-i18n-zh="顾客填写卡片" data-i18n-en="Customer fills out the card">Customer fills out the card</strong>
+          <p data-i18n-key="m5s2-step1-p" data-i18n-zh="用户填写发票表单——客户名称、金额、状态、日期。" data-i18n-en="User fills in the invoice form — customer name, amount, status, date.">User fills in the invoice form — customer name, amount, status, date.</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <strong data-i18n-key="m5s2-step2-strong" data-i18n-zh="卡片投入建议箱" data-i18n-en="Card goes into the suggestion box">Card goes into the suggestion box</strong>
+          <p data-i18n-key="m5s2-step2-p" data-i18n-zh="表单提交将数据发送到幕后的 Server Action。" data-i18n-en="Form submission sends the data to a Server Action behind the scenes.">Form submission sends the data to a <span class="term" data-definition="A Server Action is a function that runs on the server — it receives form data, validates it, writes to the database, and can redirect the user or refresh what's on screen.">Server Action</span> behind the scenes.</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <strong data-i18n-key="m5s2-step3-strong" data-i18n-zh="员工读取并验证" data-i18n-en="Staff reads and validates it">Staff reads and validates it</strong>
+          <p data-i18n-key="m5s2-step3-p" data-i18n-zh="Server Action 检查：金额真的是数字吗？他们选择了客户吗？验证会捕获错误数据。" data-i18n-en="Server Action checks: is the amount actually a number? Did they select a customer? Validation catches bad data.">Server Action checks: is the amount actually a number? Did they select a customer? <span class="term" data-definition="Validation means checking that data is valid before accepting it — like a bouncer checking your ID before letting you in.">Validation</span> catches bad data.</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <strong data-i18n-key="m5s2-step4-strong" data-i18n-zh="员工更新预订记录" data-i18n-en="Staff updates the reservation book">Staff updates the reservation book</strong>
+          <p data-i18n-key="m5s2-step4-p" data-i18n-zh="验证后的数据被写入数据库——创建了一条新的发票记录。" data-i18n-en="Validated data gets written to the database — a new invoice record is created.">Validated data gets written to the database — a new invoice record is created.</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">5</div>
+        <div class="step-body">
+          <strong data-i18n-key="m5s2-step5-strong" data-i18n-zh="顾客被重定向到餐厅" data-i18n-en="Customer gets redirected to the dining room">Customer gets redirected to the dining room</strong>
+          <p data-i18n-key="m5s2-step5-p" data-i18n-zh="写入后，服务器告诉浏览器转到发票列表——加载了最新数据。" data-i18n-en="After writing, the server tells the browser to go to the invoices list — fresh data loaded.">After writing, the server tells the browser to go to the invoices list — fresh data loaded.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ─────────────────────────────────────────────
+       SCREEN 3 — Code↔English: createInvoice
+  ───────────────────────────────────────────── -->
+  <div class="screen" id="mod5-screen-3">
+
+    <div class="screen-intro animate-in">
+      <h2 class="screen-title" data-i18n-key="m5s3-heading" data-i18n-zh="深入 Server Action" data-i18n-en="Inside a Server Action">Inside a Server Action</h2>
+      <p data-i18n-key="m5s3-p1" data-i18n-zh="这是创建发票的 Server Action。它验证、写入并重定向——表单提交的完整旅程。" data-i18n-en="This is the Server Action that creates invoices. It validates, writes, and redirects — the full journey of a form submission.">This is the <span class="term" data-definition="A Server Action is a function that runs on the server — it receives form data, validates it, writes to the database, and can redirect the user or refresh what's on screen.">Server Action</span> that creates invoices. It validates, writes, and redirects — the full journey of a form submission.</p>
+    </div>
+
+    <div class="translation-block animate-in delay-1">
+      <div class="translation-code">
+        <span class="translation-label">CODE</span>
+        <pre><code>
+<span class="code-line"><span class="code-comment">'use server';</span></span>
+<span class="code-line"></span>
+<span class="code-line"><span class="code-keyword">import</span> { z } <span class="code-keyword">from</span> <span class="code-string">'zod'</span>;</span>
+<span class="code-line"><span class="code-keyword">import</span> postgres <span class="code-keyword">from</span> <span class="code-string">'postgres'</span>;</span>
+<span class="code-line"><span class="code-keyword">import</span> { revalidatePath } <span class="code-keyword">from</span> <span class="code-string">'next/cache'</span>;</span>
+<span class="code-line"><span class="code-keyword">import</span> { redirect } <span class="code-keyword">from</span> <span class="code-string">'next/navigation'</span>;</span>
+<span class="code-line"></span>
+<span class="code-line"><span class="code-keyword">const</span> sql = postgres(process.env.POSTGRES_URL!, { ssl: <span class="code-string">'require'</span> });</span>
+<span class="code-line"></span>
+<span class="code-line"><span class="code-keyword">const</span> FormSchema = z.object({</span>
+<span class="code-line">  customerId: z.string({ <span class="code-property">invalid_type_error</span>: <span class="code-string">'Please select a customer.'</span> }),</span>
+<span class="code-line">  amount: z.coerce.number().gt(<span class="code-number">0</span>, { <span class="code-property">message</span>: <span class="code-string">'Please enter an amount greater than $0.'</span> }),</span>
+<span class="code-line">  status: z.enum([<span class="code-string">'pending'</span>, <span class="code-string">'paid'</span>], { <span class="code-property">invalid_type_error</span>: <span class="code-string">'Please select an invoice status.'</span> }),</span>
+<span class="code-line">});</span>
+<span class="code-line"></span>
+<span class="code-line"><span class="code-keyword">export</span> <span class="code-keyword">async function</span> <span class="code-function">createInvoice</span>(prevState, formData) {</span>
+<span class="code-line">  <span class="code-comment">// 1. Validate form fields using Zod</span></span>
+<span class="code-line">  <span class="code-keyword">const</span> validatedFields = FormSchema.safeParse({</span>
+<span class="code-line">    customerId: formData.get(<span class="code-string">'customerId'</span>),</span>
+<span class="code-line">    amount:     formData.get(<span class="code-string">'amount'</span>),</span>
+<span class="code-line">    status:     formData.get(<span class="code-string">'status'</span>),</span>
+<span class="code-line">  });</span>
+<span class="code-line"></span>
+<span class="code-line">  <span class="code-keyword">if</span> (!validatedFields.success) {</span>
+<span class="code-line">    <span class="code-keyword">return</span> { errors: validatedFields.error.flatten().fieldErrors,</span>
+<span class="code-line">             message: <span class="code-string">'Missing Fields. Failed to Create Invoice.'</span> };</span>
+<span class="code-line">  }</span>
+<span class="code-line"></span>
+<span class="code-line">  <span class="code-comment">// 2. Prepare data for the database</span></span>
+<span class="code-line">  <span class="code-keyword">const</span> { customerId, amount, status } = validatedFields.data;</span>
+<span class="code-line">  <span class="code-keyword">const</span> amountInCents = amount * <span class="code-number">100</span>;</span>
+<span class="code-line">  <span class="code-keyword">const</span> date = <span class="code-keyword">new</span> Date().toISOString().split(<span class="code-string">'T'</span>)[<span class="code-number">0</span>];</span>
+<span class="code-line"></span>
+<span class="code-line">  <span class="code-comment">// 3. Insert into database</span></span>
+<span class="code-line">  <span class="code-keyword">try</span> {</span>
+<span class="code-line">    <span class="code-keyword">await</span> sql<span class="code-template">`INSERT INTO invoices</span></span>
+<span class="code-line">      (customer_id, amount, status, date)</span>
+<span class="code-line">      VALUES (${customerId}, ${amountInCents}, ${status}, ${date})`</span>;
+<span class="code-line">  } <span class="code-keyword">catch</span> (error) {</span>
+<span class="code-line">    <span class="code-keyword">return</span> { message: <span class="code-string">'Database Error: Failed to Create Invoice.'</span> };</span>
+<span class="code-line">  }</span>
+<span class="code-line"></span>
+<span class="code-line">  <span class="code-comment">// 4. Revalidate cache and redirect</span></span>
+<span class="code-line">  revalidatePath(<span class="code-string">'/dashboard/invoices'</span>);</span>
+<span class="code-line">  redirect(<span class="code-string">'/dashboard/invoices'</span>);</span>
+<span class="code-line">}</span>
+</code></pre>
+      </div>
+      <div class="translation-english">
+        <span class="translation-label">PLAIN ENGLISH</span>
+        <div class="translation-lines">
+          <p class="tl" data-i18n-key="m5s3-tl1" data-i18n-zh="<strong>将整个文件标记为仅服务器端</strong>——这个文件中的每个函数都在后端运行，绝不会在浏览器中运行。" data-i18n-en="<strong>Mark this entire file as server-only</strong> — every function in this file runs on the backend, never in the browser."><strong>Mark this entire file as server-only</strong> — every function in this file runs on the backend, never in the browser.</p>
+          <p class="tl"></p>
+          <p class="tl" data-i18n-key="m5s3-tl2" data-i18n-zh="引入 Zod（一个验证库）、Postgres 数据库驱动和两个 Next.js 辅助函数：revalidatePath 和 redirect。" data-i18n-en="Bring in Zod (a validation library), the Postgres database driver, and two Next.js helpers: revalidatePath and redirect.">Bring in Zod (a <span class="term" data-definition="Zod is a validation library — you describe what valid data looks like, and Zod checks if actual data matches.">validation library</span>), the Postgres database driver, and two Next.js helpers: revalidatePath and redirect.</p>
+          <p class="tl"></p>
+          <p class="tl" data-i18n-key="m5s3-tl3" data-i18n-zh="使用环境变量中的连接字符串连接到 Postgres 数据库。" data-i18n-en="Connect to the Postgres database using the connection string from environment variables.">Connect to the Postgres database using the connection string from environment variables.</p>
+          <p class="tl"></p>
+          <p class="tl" data-i18n-key="m5s3-tl4" data-i18n-zh="<strong>定义有效发票数据的形状。</strong> customerId 必须是字符串，amount 必须是大于 $0 的数字，status 必须是 'pending' 或 'paid' 之一。Zod 将强制执行这些规则。" data-i18n-en="<strong>Define the shape of valid invoice data.</strong> customerId must be a string, amount must be a number greater than $0, and status must be either 'pending' or 'paid'. Zod will enforce these rules."><strong>Define the shape of valid invoice data.</strong> customerId must be a string, amount must be a number greater than $0, and status must be either 'pending' or 'paid'. Zod will enforce these rules.</p>
+          <p class="tl"></p>
+          <p class="tl" data-i18n-key="m5s3-tl5" data-i18n-zh="<strong>主函数——在表单提交时调用。</strong> 它接收前一个状态和提交表单中的原始表单数据。" data-i18n-en="<strong>The main function — called when the form is submitted.</strong> It receives the previous state and the raw form data from the submitted form."><strong>The main function — called when the form is submitted.</strong> It receives the previous state and the raw form data from the submitted form.</p>
+          <p class="tl" data-i18n-key="m5s3-tl6" data-i18n-zh="让 Zod 根据我们的规则检查每个表单字段——customerId 是否存在？amount 真的是数字吗？" data-i18n-en="Ask Zod to check each form field against our rules — is customerId present? Is amount actually a number?">Ask Zod to check each form field against our rules — is customerId present? Is amount actually a number?</p>
+          <p class="tl"></p>
+          <p class="tl" data-i18n-key="m5s3-tl7" data-i18n-zh="<strong>如果验证失败，在此停止并返回错误消息。</strong> 表单会向用户显示这些错误，让他们可以修复并重试。" data-i18n-en="<strong>If validation fails, stop here and return error messages.</strong> The form will display these errors to the user so they can fix them and try again."><strong>If validation fails, stop here and return error messages.</strong> The form will display these errors to the user so they can fix them and try again.</p>
+          <p class="tl"></p>
+          <p class="tl" data-i18n-key="m5s3-tl8" data-i18n-zh="提取验证后的值并进行一些轻量处理——将美元转换为美分（数据库将金额存储为整数，而不是小数）。" data-i18n-en="Pull out the validated values and do some light processing — convert dollars to cents (databases store amounts as integers, not decimals).">Pull out the validated values and do some light processing — convert dollars to cents (databases store amounts as integers, not decimals).</p>
+          <p class="tl"></p>
+          <p class="tl" data-i18n-key="m5s3-tl9" data-i18n-zh="<strong>将新发票写入数据库。</strong> 如果出现问题，捕获错误并返回友好的消息，而不是崩溃。" data-i18n-en="<strong>Write the new invoice into the database.</strong> If anything goes wrong, catch the error and return a friendly message instead of crashing."><strong>Write the new invoice into the database.</strong> If anything goes wrong, catch the error and return a friendly message instead of crashing.</p>
+          <p class="tl"></p>
+          <p class="tl" data-i18n-key="m5s3-tl10" data-i18n-zh="<strong>告诉 Next.js 忘记它对发票页面记忆的内容</strong>——下一个访问者从数据库获取新数据，而不是缓存版本。" data-i18n-en="<strong>Tell Next.js to forget what it remembered about the invoices page</strong> — the next visitor gets fresh data from the database instead of the cached version."><strong>Tell Next.js to forget what it remembered about the invoices page</strong> — the next visitor gets fresh data from the database instead of the cached version.</p>
+          <p class="tl" data-i18n-key="m5s3-tl11" data-i18n-zh="然后将浏览器发送到发票列表页面。" data-i18n-en="Then send the browser to the invoices list page.">Then send the browser to the invoices list page.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ─────────────────────────────────────────────
+       SCREEN 4 — Data Flow Animation
+  ───────────────────────────────────────────── -->
+  <div class="screen" id="mod5-screen-4">
+
+    <div class="screen-intro animate-in">
+      <h2 class="screen-title" data-i18n-key="m5s4-heading" data-i18n-zh="完整的数据旅程" data-i18n-en="The complete data journey">The complete data journey</h2>
+      <p data-i18n-key="m5s4-p1" data-i18n-zh="观察用户提交发票表单时每一步发生了什么——从浏览器到服务器到数据库再返回。" data-i18n-en="Watch what happens step by step when a user submits the invoice form — from browser to server to database and back.">Watch what happens step by step when a user submits the invoice form — from browser to server to database and back.</p>
+    </div>
+
+    <div class="flow-animation animate-in delay-1" id="flow-mod5" data-steps='[
+      {"highlight":"flow-browser","label":"User fills the invoice form and clicks Create"},
+      {"highlight":"flow-form","label":"formAction calls the createInvoice Server Action"},
+      {"highlight":"flow-server","label":"Server Action runs — validates data with Zod"},
+      {"highlight":"flow-zod","label":"Zod says: amount > 0, customerId present, status valid"},
+      {"highlight":"flow-server","label":"Server prepares the data: converts dollars to cents"},
+      {"highlight":"flow-db","label":"Database inserts the new invoice row"},
+      {"highlight":"flow-server","label":"Server calls revalidatePath to clear cached invoices page"},
+      {"highlight":"flow-server","label":"Server calls redirect — browser navigates to /dashboard/invoices"},
+      {"highlight":"flow-browser","label":"Browser loads the fresh invoices list with the new invoice visible"}
+    ]'>
+      <div class="flow-actors">
+        <div class="flow-actor" id="flow-browser">
+          <div class="flow-actor-icon">🖥️</div>
+          <span>Browser</span>
+        </div>
+        <div class="flow-actor" id="flow-form">
+          <div class="flow-actor-icon">📋</div>
+          <span>Form</span>
+        </div>
+        <div class="flow-actor" id="flow-server">
+          <div class="flow-actor-icon">⚡</div>
+          <span>Server Action</span>
+        </div>
+        <div class="flow-actor" id="flow-zod">
+          <div class="flow-actor-icon">🔍</div>
+          <span>Zod</span>
+        </div>
+        <div class="flow-actor" id="flow-db">
+          <div class="flow-actor-icon">🗄️</div>
+          <span>Database</span>
+        </div>
+      </div>
+      <div class="flow-packet" id="flow-packet"></div>
+      <div class="flow-step-label" id="flow-label" data-i18n-key="m5s4-flow-label" data-i18n-zh="点击"下一步"开始" data-i18n-en="Click "Next Step" to begin">Click "Next Step" to begin</div>
+      <div class="flow-controls">
+        <button class="btn flow-next-btn" data-i18n-key="m5s4-btn-next" data-i18n-zh="下一步" data-i18n-en="Next Step">Next Step</button>
+        <button class="btn flow-reset-btn" data-i18n-key="m5s4-btn-restart" data-i18n-zh="重新开始" data-i18n-en="Restart">Restart</button>
+        <span class="flow-progress"></span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ─────────────────────────────────────────────
+       SCREEN 5 — Group Chat Animation
+  ───────────────────────────────────────────── -->
+  <div class="screen" id="mod5-screen-5">
+
+    <div class="screen-intro animate-in">
+      <h2 class="screen-title" data-i18n-key="m5s5-heading" data-i18n-zh="组件对话" data-i18n-en="The components talk it through">The components talk it through</h2>
+      <p data-i18n-key="m5s5-p1" data-i18n-zh="这是创建发票时 Server Action 及其盟友之间的对话。" data-i18n-en="Here's the conversation between the Server Action and its allies when an invoice is created.">Here's the conversation between the <span class="term" data-definition="A Server Action is a function that runs on the server — it receives form data, validates it, writes to the database, and can redirect the user or refresh what's on screen.">Server Action</span> and its allies when an invoice is created.</p>
+    </div>
+
+    <div class="chat-window animate-in delay-1" id="chat-mod5">
+      <div class="chat-messages">
+        <div class="chat-message" data-msg="0" data-sender="form" style="display:none">
+          <div class="chat-avatar" style="background: var(--color-actor-1)">📋</div>
+          <div class="chat-bubble">
+            <span class="chat-sender" style="color: var(--color-actor-1)">Form</span>
+            <p data-i18n-key="m5s5-chat1" data-i18n-zh="我有发票数据——客户 ID、金额和状态。准备提交！" data-i18n-en="I have invoice data — customer ID, amount, and status. Ready to submit!">I have invoice data — customer ID, amount, and status. Ready to submit!</p>
+          </div>
+        </div>
+        <div class="chat-message" data-msg="1" data-sender="server" style="display:none">
+          <div class="chat-avatar" style="background: var(--color-actor-2)">⚡</div>
+          <div class="chat-bubble">
+            <span class="chat-sender" style="color: var(--color-actor-2)">Server Action</span>
+            <p data-i18n-key="m5s5-chat2" data-i18n-zh="收到。用 Zod 运行验证——检查金额是否为正数、是否选择了客户、状态是否有效..." data-i18n-en="Got it. Running validation with Zod — checking that amount is positive, customer is selected, status is valid...">Got it. Running validation with Zod — checking that amount is positive, customer is selected, status is valid...</p>
+          </div>
+        </div>
+        <div class="chat-message" data-msg="2" data-sender="zod" style="display:none">
+          <div class="chat-avatar" style="background: var(--color-actor-4)">🔍</div>
+          <div class="chat-bubble">
+            <span class="chat-sender" style="color: var(--color-actor-4)">Zod</span>
+            <p data-i18n-key="m5s5-chat3" data-i18n-zh="看起来不错！所有字段都通过验证。" data-i18n-en="Looks good! All fields pass validation.">Looks good! All fields pass validation.</p>
+          </div>
+        </div>
+        <div class="chat-message" data-msg="3" data-sender="server" style="display:none">
+          <div class="chat-avatar" style="background: var(--color-actor-2)">⚡</div>
+          <div class="chat-bubble">
+            <span class="chat-sender" style="color: var(--color-actor-2)">Server Action</span>
+            <p data-i18n-key="m5s5-chat4" data-i18n-zh="转换为美分，插入数据库..." data-i18n-en="Converting amount to cents, inserting into database...">Converting amount to cents, inserting into database...</p>
+          </div>
+        </div>
+        <div class="chat-message" data-msg="4" data-sender="database" style="display:none">
+          <div class="chat-avatar" style="background: var(--color-actor-5)">🗄️</div>
+          <div class="chat-bubble">
+            <span class="chat-sender" style="color: var(--color-actor-5)">Database</span>
+            <p data-i18n-key="m5s5-chat5" data-i18n-zh="已插入！新发票行已创建。" data-i18n-en="Inserted! New invoice row created.">Inserted! New invoice row created.</p>
+          </div>
+        </div>
+        <div class="chat-message" data-msg="5" data-sender="server" style="display:none">
+          <div class="chat-avatar" style="background: var(--color-actor-2)">⚡</div>
+          <div class="chat-bubble">
+            <span class="chat-sender" style="color: var(--color-actor-2)">Server Action</span>
+            <p data-i18n-key="m5s5-chat6" data-i18n-zh="缓存已清除——revalidatePath('/dashboard/invoices')。下一个访问者看到新数据。" data-i18n-en="Cache cleared — revalidatePath('/dashboard/invoices'). Next visitor sees fresh data.">Cache cleared — revalidatePath('/dashboard/invoices'). Next visitor sees fresh data.</p>
+          </div>
+        </div>
+        <div class="chat-message" data-msg="6" data-sender="server" style="display:none">
+          <div class="chat-avatar" style="background: var(--color-actor-2)">⚡</div>
+          <div class="chat-bubble">
+            <span class="chat-sender" style="color: var(--color-actor-2)">Server Action</span>
+            <p data-i18n-key="m5s5-chat7" data-i18n-zh="redirect('/dashboard/invoices')——现在将浏览器发送到那里。" data-i18n-en="redirect('/dashboard/invoices') — sending browser there now.">redirect('/dashboard/invoices') — sending browser there now.</p>
+          </div>
+        </div>
+        <div class="chat-message" data-msg="7" data-sender="browser" style="display:none">
+          <div class="chat-avatar" style="background: var(--color-actor-3)">🖥️</div>
+          <div class="chat-bubble">
+            <span class="chat-sender" style="color: var(--color-actor-3)">Browser</span>
+            <p data-i18n-key="m5s5-chat8" data-i18n-zh="已到达 /dashboard/invoices——新发票可见！" data-i18n-en="Arrived at /dashboard/invoices — new invoice is visible!">Arrived at /dashboard/invoices — new invoice is visible!</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="chat-typing" id="chat-mod5-typing" style="display:none">
+        <div class="chat-avatar">?</div>
+        <div class="chat-typing-dots">
+          <span class="typing-dot"></span>
+          <span class="typing-dot"></span>
+          <span class="typing-dot"></span>
+        </div>
+      </div>
+
+      <div class="chat-controls">
+        <button class="btn chat-next-btn" data-i18n-key="m5s5-btn-next" data-i18n-zh="下一条消息" data-i18n-en="Next Message">Next Message</button>
+        <button class="btn chat-all-btn" data-i18n-key="m5s5-btn-all" data-i18n-zh="全部播放" data-i18n-en="Play All">Play All</button>
+        <button class="btn chat-reset-btn" data-i18n-key="m5s5-btn-replay" data-i18n-zh="重播" data-i18n-en="Replay">Replay</button>
+        <span class="chat-progress"></span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ─────────────────────────────────────────────
+       SCREEN 6 — 'use server' Callout
+  ───────────────────────────────────────────── -->
+  <div class="screen" id="mod5-screen-6">
+
+    <div class="screen-intro animate-in">
+      <h2 class="screen-title" data-i18n-key="m5s6-heading" data-i18n-zh="'use server'——文件级与内联" data-i18n-en="'use server' — file-wide vs inline">'use server' — file-wide vs inline</h2>
+      <p data-i18n-key="m5s6-p1" data-i18n-zh="你可以在整个文件顶部放置 'use server'，或者在函数内部内联放置。区别如下。" data-i18n-en="You can put 'use server' at the top of an entire file, or inline inside a function. Here's the difference.">You can put <span class="term" data-definition="'use server' is a directive that tells Next.js a function should run on the server, not in the browser. It's like a backstage pass — the function gets to operate behind the scenes.">'use server'</span> at the top of an entire file, or inline inside a function. Here's the difference.</p>
+    </div>
+
+    <div class="pattern-cards animate-in delay-1">
+      <div class="pattern-card" style="border-top: 3px solid var(--color-actor-2)">
+        <div class="pattern-icon" style="background: var(--color-actor-2)">📄</div>
+        <h4 class="pattern-title" data-i18n-key="m5s6-pattern1-title" data-i18n-zh="文件顶部的 'use server'" data-i18n-en="'use server' at file top">'use server' at file top</h4>
+        <p class="pattern-desc" data-i18n-key="m5s6-pattern1-desc" data-i18n-zh="<strong>整个文件</strong>在服务器上运行。文件中的每个函数——甚至是间接调用的辅助函数——都在服务器端运行。这是 <code>app/lib/actions.ts</code> 使用的模式。" data-i18n-en="The <strong>entire file</strong> runs on the server. Every function in the file — even helper functions called indirectly — runs server-side. This is the pattern used by <code>app/lib/actions.ts</code>.">The <strong>entire file</strong> runs on the server. Every function in the file — even helper functions called indirectly — runs server-side. This is the pattern used by <code>app/lib/actions.ts</code>.</p>
+      </div>
+      <div class="pattern-card" style="border-top: 3px solid var(--color-actor-3)">
+        <div class="pattern-icon" style="background: var(--color-actor-3)">⚡</div>
+        <h4 class="pattern-title" data-i18n-key="m5s6-pattern2-title" data-i18n-zh="内联 'use server'" data-i18n-en="'use server' inline">'use server' inline</h4>
+        <p class="pattern-desc" data-i18n-key="m5s6-pattern2-desc" data-i18n-zh="只有紧接在后的函数在服务器上运行。文件的其余部分可以在客户端运行。当你想将客户端交互与服务器操作混合时，这很有用。" data-i18n-en="Only the immediately following function runs on the server. The rest of the file can run on the client. Useful when you want to mix client interactivity with server operations.">Only the immediately following function runs on the server. The rest of the file can run on the client. Useful when you want to mix client interactivity with server operations.</p>
+      </div>
+    </div>
+
+    <div class="callout callout-accent animate-in delay-2">
+      <div class="callout-icon">💡</div>
+      <div class="callout-content">
+        <strong class="callout-title" data-i18n-key="m5s6-callout-title" data-i18n-zh="整个文件，而不仅仅是一个函数" data-i18n-en="The whole file, not just one function">The whole file, not just one function</strong>
+        <p data-i18n-key="m5s6-callout-p" data-i18n-zh="当你在文件顶部放置 'use server' 时，它意味着<strong>整个文件</strong>在服务器上运行。该文件引入的任何导入（如 Postgres 驱动或 Zod）也在服务器端运行。这就是为什么 <code>app/lib/actions.ts</code> 可以直接连接到数据库——整个文件是一个仅服务器端的环境。" data-i18n-en="When you put 'use server' at the top of a file, it means the <strong>entire file</strong> runs on the server. Any imports that file pulls in (like the Postgres driver or Zod) also run server-side. This is why <code>app/lib/actions.ts</code> can directly connect to the database — the whole file is a server-only environment.">When you put <span class="term" data-definition="'use server' is a directive that tells Next.js a function should run on the server, not in the browser. It's like a backstage pass — the function gets to operate behind the scenes.">'use server'</span> at the top of a file, it means the <strong>entire file</strong> runs on the server. Any imports that file pulls in (like the Postgres driver or Zod) also run server-side. This is why <code>app/lib/actions.ts</code> can directly connect to the database — the whole file is a server-only environment.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ─────────────────────────────────────────────
+       SCREEN 7 — revalidatePath Explained
+  ───────────────────────────────────────────── -->
+  <div class="screen" id="mod5-screen-7">
+
+    <div class="screen-intro animate-in">
+      <h2 class="screen-title" data-i18n-key="m5s7-heading" data-i18n-zh="为什么需要 revalidatePath？" data-i18n-en="Why revalidatePath?">Why revalidatePath?</h2>
+      <p data-i18n-key="m5s7-p1" data-i18n-zh="在写入数据库后，代码调用 revalidatePath。这就是其重要性所在。" data-i18n-en="After writing to the database, the code calls revalidatePath. Here's why that matters.">After writing to the database, the code calls <span class="term" data-definition="revalidatePath tells Next.js to forget its cached version of a page — the next request for that page will fetch fresh data from the database instead of returning the old cached result.">revalidatePath</span>. Here's why that matters.</p>
+    </div>
+
+    <div class="icon-rows animate-in delay-1">
+      <div class="icon-row">
+        <div class="icon-circle" style="background: var(--color-actor-3)">🧠</div>
+        <div>
+          <strong data-i18n-key="m5s7-strong1" data-i18n-zh="Next.js 会记住页面" data-i18n-en="Next.js remembers pages">Next.js remembers pages</strong>
+          <p data-i18n-key="m5s7-p2" data-i18n-zh="当你访问一个页面时，Next.js 会将其缓存。下一次访问者获得保存的版本，而不是再次访问数据库。" data-i18n-en="When you visit a page, Next.js caches it. The next visitor gets the saved version instead of hitting the database again.">When you visit a page, Next.js <span class="term" data-definition="Caching stores a copy of a page so it loads faster — like keeping a book on your desk instead of walking to the library every time.">caches</span> it. The next visitor gets the saved version instead of hitting the database again.</p>
+        </div>
+      </div>
+      <div class="icon-row">
+        <div class="icon-circle" style="background: var(--color-actor-1)">🗑️</div>
+        <div>
+          <strong data-i18n-key="m5s7-strong2" data-i18n-zh="revalidatePath 说"忘掉你记住的"" data-i18n-en="revalidatePath says "forget what you remembered"">revalidatePath says "forget what you remembered"</strong>
+          <p data-i18n-key="m5s7-p3" data-i18n-zh="创建新发票后，缓存的发票页面现在已过时。调用 revalidatePath 会清除该缓存，以便下一次请求从数据库获取新数据。" data-i18n-en="After a new invoice is created, the cached invoices page is now stale. Calling revalidatePath wipes that cache so the next request gets fresh data from the database.">After a new invoice is created, the cached invoices page is now stale. Calling <span class="term" data-definition="revalidatePath tells Next.js to forget its cached version of a page — the next request for that page will fetch fresh data from the database instead of returning the old cached result.">revalidatePath</span> wipes that <span class="term" data-definition="A cache is temporary stored data — like keeping leftovers instead of cooking fresh each time.">cache</span> so the next request gets fresh data from the database.</p>
+        </div>
+      </div>
+      <div class="icon-row">
+        <div class="icon-circle" style="background: var(--color-actor-5)">🔄</div>
+        <div>
+          <strong data-i18n-key="m5s7-strong3" data-i18n-zh="然后 redirect 将用户发送到那里" data-i18n-en="Then redirect sends the user there">Then redirect sends the user there</strong>
+          <p data-i18n-key="m5s7-p4" data-i18n-zh="浏览器导航到 <code>/dashboard/invoices</code>，现在从数据库获取更新后的数据——包括新发票——新鲜的。" data-i18n-en="The browser navigates to <code>/dashboard/invoices</code>, which now fetches the updated data — including the new invoice — fresh from the database.">The browser navigates to <code>/dashboard/invoices</code>, which now fetches the updated data — including the new invoice — fresh from the database.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout callout-info animate-in delay-2">
+      <div class="callout-icon">ℹ️</div>
+      <div class="callout-content">
+        <strong class="callout-title" data-i18n-key="m5s7-callout-title" data-i18n-zh="性能提升，无需复杂性" data-i18n-en="Performance without the complexity">Performance without the complexity</strong>
+        <p data-i18n-key="m5s7-callout-p" data-i18n-zh="在传统应用中，变更后你需要手动重新获取数据。revalidatePath + redirect 自动处理这个过程。用户看到更新后的数据，没有页面刷新闪烁。" data-i18n-en="In a traditional app, you'd need to manually refetch data after a mutation. revalidatePath + redirect handles this automatically. The user sees updated data without a page refresh flicker.">In a traditional app, you'd need to manually refetch data after a mutation. <span class="term" data-definition="revalidatePath tells Next.js to forget its cached version of a page — the next request for that page will fetch fresh data from the database instead of returning the old cached result.">revalidatePath</span> + <span class="term" data-definition="redirect sends the browser to a different URL — like following a sign that points to another room.">redirect</span> handles this automatically. The user sees updated data without a page refresh flicker.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ─────────────────────────────────────────────
+       SCREEN 8 — Quiz
+  ───────────────────────────────────────────── -->
+  <div class="screen" id="mod5-screen-8">
+
+    <div class="screen-intro animate-in">
+      <h2 class="screen-title" data-i18n-key="m5s8-heading" data-i18n-zh="测试你的理解" data-i18n-en="Test your understanding">Test your understanding</h2>
+      <p data-i18n-key="m5s8-p1" data-i18n-zh="三个场景——应用你学到的关于 Server Actions、Zod 和 revalidatePath 的知识。" data-i18n-en="Three scenarios — apply what you've learned about Server Actions, Zod, and revalidatePath.">Three scenarios — apply what you've learned about <span class="term" data-definition="A Server Action is a function that runs on the server — it receives form data, validates it, writes to the database, and can redirect the user or refresh what's on screen.">Server Actions</span>, <span class="term" data-definition="Zod is a validation library — you describe what valid data looks like, and Zod checks if actual data matches.">Zod</span>, and <span class="term" data-definition="revalidatePath tells Next.js to forget its cached version of a page — the next request for that page will fetch fresh data from the database instead of returning the old cached result.">revalidatePath</span>.</p>
+    </div>
+
+    <div class="quiz-container animate-in delay-1" id="quiz-mod5">
+
+      <!-- Question 1 -->
+      <div class="quiz-question-block"
+           data-correct="option-b"
+           data-explanation-right="Exactly — Zod runs inside the Server Action on the server. If the data is invalid, the Server Action returns an errors object and the form displays the error messages. The database never gets touched."
+           data-explanation-wrong="Not quite. The database isn't involved at this stage — Zod validates the data inside the Server Action before any database call is made. If Zod finds a problem, it returns errors immediately.">
+        <h3 class="quiz-question" data-i18n-key="m5s8-q1" data-i18n-zh="用户提交金额为 '-50' 的发票表单。这在哪里被捕获，如何捕获？" data-i18n-en="A user submits an invoice form with '-50' as the amount. Where is this caught and how?">A user submits an invoice form with '-50' as the amount. Where is this caught and how?</h3>
+        <div class="quiz-options">
+          <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+            <div class="quiz-option-radio"></div>
+            <span data-i18n-key="m5s8-q1-a" data-i18n-zh="数据库在插入失败时捕获" data-i18n-en="The database catches it when the insert fails">The database catches it when the insert fails</span>
+          </button>
+          <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+            <div class="quiz-option-radio"></div>
+            <span data-i18n-key="m5s8-q1-b" data-i18n-zh="Zod 在调用数据库之前在 Server Action 内部验证" data-i18n-en="Zod validates it inside the Server Action before the database is called">Zod validates it inside the Server Action before the database is called</span>
+          </button>
+          <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+            <div class="quiz-option-radio"></div>
+            <span data-i18n-key="m5s8-q1-c" data-i18n-zh="浏览器使用 HTML 验证捕获" data-i18n-en="The browser catches it with HTML validation">The browser catches it with HTML validation</span>
+          </button>
+        </div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="quiz-question-block"
+           data-correct="option-c"
+           data-explanation-right="Right — revalidatePath clears the cached invoices page so the next visitor sees the new invoice. Without it, users would see stale data until the cache expires on its own."
+           data-explanation-wrong="Not quite. The redirect does send the user to the invoices page, but without revalidatePath, the page might load a stale cached version that doesn't show the new invoice. Both calls are needed."
+           data-explanation-neutral="Both B and C have truth to them — but revalidatePath is the critical piece that makes the redirect show fresh data.">
+        <h3 class="quiz-question" data-i18n-key="m5s8-q2" data-i18n-zh="创建发票后，为什么代码调用 revalidatePath 而不是仅仅重定向？" data-i18n-en="After creating an invoice, why does the code call revalidatePath instead of just redirecting?">After creating an invoice, why does the code call revalidatePath instead of just redirecting?</h3>
+        <div class="quiz-options">
+          <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+            <div class="quiz-option-radio"></div>
+            <span data-i18n-key="m5s8-q2-a" data-i18n-zh="redirect 只在客户端工作" data-i18n-en="redirect only works on the client side">redirect only works on the client side</span>
+          </button>
+          <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+            <div class="quiz-option-radio"></div>
+            <span data-i18n-key="m5s8-q2-b" data-i18n-zh="revalidatePath 比 redirect 更快" data-i18n-en="revalidatePath is faster than redirect">revalidatePath is faster than redirect</span>
+          </button>
+          <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+            <div class="quiz-option-radio"></div>
+            <span data-i18n-key="m5s8-q2-c" data-i18n-zh="revalidatePath 清除缓存页面以便新发票立即显示" data-i18n-en="revalidatePath clears the cached page so the new invoice appears immediately">revalidatePath clears the cached page so the new invoice appears immediately</span>
+          </button>
+          <button class="quiz-option" data-value="option-d" onclick="selectOption(this)">
+            <div class="quiz-option-radio"></div>
+            <span data-i18n-key="m5s8-q2-d" data-i18n-zh="没有 revalidatePath 的 redirect 会导致 404 错误" data-i18n-en="redirect without revalidatePath would cause a 404 error">redirect without revalidatePath would cause a 404 error</span>
+          </button>
+        </div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="quiz-question-block"
+           data-correct="option-b"
+           data-explanation-right="Correct. A delete Server Action would validate (check the invoice ID exists), delete the row from the database, then call revalidatePath('/dashboard/invoices') to clear the cache so the deleted invoice disappears from the list."
+           data-explanation-wrong="Not quite. While redirect is optional, revalidatePath is essential — otherwise the cached invoices page would still show the deleted invoice until the cache expires. You'd also need to validate the invoice ID exists before attempting deletion."
+           data-explanation-neutral="Think about the full cycle: validate, delete from DB, clear the cache so the change is visible.">
+        <h3 class="quiz-question" data-i18n-key="m5s8-q3" data-i18n-zh="你要构建一个'删除发票'功能。删除 Server Action 需要做什么？" data-i18n-en="You're building a 'delete invoice' feature. What would a delete Server Action need to do?">You're building a 'delete invoice' feature. What would a delete Server Action need to do?</h3>
+        <div class="quiz-options">
+          <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+            <div class="quiz-option-radio"></div>
+            <span data-i18n-key="m5s8-q3-a" data-i18n-zh="删除后直接调用 redirect——revalidatePath 是可选的" data-i18n-en="Just call redirect after deleting — revalidatePath is optional">Just call redirect after deleting — revalidatePath is optional</span>
+          </button>
+          <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+            <div class="quiz-option-radio"></div>
+            <span data-i18n-key="m5s8-q3-b" data-i18n-zh="验证发票 ID，从数据库删除，然后 revalidatePath 刷新列表" data-i18n-en="Validate the invoice ID, delete from DB, then revalidatePath to refresh the list">Validate the invoice ID, delete from DB, then revalidatePath to refresh the list</span>
+          </button>
+          <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+            <div class="quiz-option-radio"></div>
+            <span data-i18n-key="m5s8-q3-c" data-i18n-zh="直接从客户端组件删除，不经过服务器" data-i18n-en="Delete directly from the client component without going through the server">Delete directly from the client component without going through the server</span>
+          </button>
+        </div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <button class="quiz-check-btn" data-i18n-key="m5s8-btn-check" data-i18n-zh="检查答案" data-i18n-en="Check Answers" onclick="checkQuiz('quiz-mod5')">Check Answers</button>
+      <button class="quiz-reset-btn" data-i18n-key="m5s8-btn-reset" data-i18n-zh="再试一次" data-i18n-en="Try Again" onclick="resetQuiz('quiz-mod5')">Try Again</button>
+    </div>
+
+  </div>
+
+</section>

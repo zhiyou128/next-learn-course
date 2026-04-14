@@ -1,0 +1,427 @@
+<section class="module" id="module-2" style="background: var(--color-bg-warm)">
+
+  <!-- ─── MODULE HEADER ─────────────────────────────────────── -->
+  <header class="module-header">
+    <span class="module-number">02</span>
+    <h1 class="module-title" data-i18n-key="m2-header-title" data-i18n-zh="认识演员阵容" data-i18n-en="Meet the Cast">Meet the Cast</h1>
+    <p class="module-subtitle" data-i18n-key="m2-header-subtitle" data-i18n-zh="每个文件都有角色——以下是演职人员名单" data-i18n-en="Every file has a role — here's the cast">Every file has a role — here's the cast</p>
+  </header>
+
+  <!-- ─── SCREEN 1: The Theater Opens ────────────────────────── -->
+  <div class="screen" id="module-2-screen-1">
+
+    <div class="screen-intro">
+      <h2 class="screen-title" data-i18n-key="m2s1-heading" data-i18n-zh="演出已经在进行中" data-i18n-en="The Show Is Already Running">The Show Is Already Running</h2>
+      <p data-i18n-key="m2s1-p1" data-i18n-zh="每个 Next.js 项目都是一场戏剧演出。当你访问 /dashboard 时，一组文件就会行动起来——每个文件都扮演着特定的角色。" data-i18n-en="Every Next.js project is a theater production. When you visit <code>/dashboard</code>, a cast of files springs to life — each one playing a specific role.">Every Next.js project is a theater production. When you visit <code>/dashboard</code>, a cast of files springs to life — each one playing a specific role.</p>
+    </div>
+
+    <div class="callout callout-accent">
+      <div class="callout-icon">💡</div>
+      <div class="callout-content">
+        <strong class="callout-title" data-i18n-key="m2s1-callout-title" data-i18n-zh="剧情反转" data-i18n-en="The Plot Twist">The Plot Twist</strong>
+        <p data-i18n-key="m2s1-callout-p" data-i18n-zh="AI 编码工具经常把代码放在错误的「房间」里。知道每个文件的作用意味着你可以说「不，那是 UI 部件——把它放在服装间，而不是舞台上。」" data-i18n-en="AI coding tools often put code in the wrong &quot;room.&quot; Knowing which file does what means you can say <em>&quot;no, that's a UI piece — put it in the costume shop, not on stage.&quot;</em>">AI coding tools often put code in the wrong "room." Knowing which file does what means you can say <em>"no, that's a UI piece — put it in the costume shop, not on stage."</em></p>
+      </div>
+    </div>
+
+    <div class="pattern-cards">
+      <div class="pattern-card" style="border-top: 3px solid var(--color-actor-1)">
+        <div class="pattern-icon" style="background: var(--color-actor-1)">🎭</div>
+        <h4 class="pattern-title" data-i18n-key="m2s1-card1-title" data-i18n-zh="<span class=&quot;term&quot; data-definition=&quot;The .tsx file that renders when someone visits a specific URL — it&apos;s the lead actor, always on stage.&quot;>page.tsx</span>" data-i18n-en="<span class=&quot;term&quot; data-definition=&quot;The .tsx file that renders when someone visits a specific URL — it&apos;s the lead actor, always on stage.&quot;>page.tsx</span>"><span class="term" data-definition="The .tsx file that renders when someone visits a specific URL — it's the lead actor, always on stage.">page.tsx</span></h4>
+        <p class="pattern-desc" data-i18n-key="m2s1-card1-desc" data-i18n-zh="主角。为一个特定 URL 登台。没有其他文件能做它的工作。" data-i18n-en="The lead actor. Shows up on stage for one specific URL. Nothing else does its job.">The lead actor. Shows up on stage for one specific URL. Nothing else does its job.</p>
+      </div>
+      <div class="pattern-card" style="border-top: 3px solid var(--color-actor-2)">
+        <div class="pattern-icon" style="background: var(--color-actor-2)">🎬</div>
+        <h4 class="pattern-title" data-i18n-key="m2s1-card2-title" data-i18n-zh="<span class=&quot;term&quot; data-definition=&quot;A file that wraps multiple pages with shared UI — the stage manager who keeps the set consistent across scenes.&quot;>layout.tsx</span>" data-i18n-en="<span class=&quot;term&quot; data-definition=&quot;A file that wraps multiple pages with shared UI — the stage manager who keeps the set consistent across scenes.&quot;>layout.tsx</span>"><span class="term" data-definition="A file that wraps multiple pages with shared UI — the stage manager who keeps the set consistent across scenes.">layout.tsx</span></h4>
+        <p class="pattern-desc" data-i18n-key="m2s1-card2-desc" data-i18n-zh="舞台经理。用共享的页眉、侧边栏或页脚包裹每个场景。" data-i18n-en="The stage manager. Wraps every scene with shared headers, sidebars, or footers.">The stage manager. Wraps every scene with shared headers, sidebars, or footers.</p>
+      </div>
+      <div class="pattern-card" style="border-top: 3px solid var(--color-actor-3)">
+        <div class="pattern-icon" style="background: var(--color-actor-3)">👗</div>
+        <h4 class="pattern-title" data-i18n-key="m2s1-card3-title" data-i18n-zh="<span class=&quot;term&quot; data-definition=&quot;A folder full of reusable visual pieces — buttons, cards, nav bars. Any page can &apos;borrow&apos; from the costume shop.&quot;>ui/</span>" data-i18n-en="<span class=&quot;term&quot; data-definition=&quot;A folder full of reusable visual pieces — buttons, cards, nav bars. Any page can &apos;borrow&apos; from the costume shop.&quot;>ui/</span>"><span class="term" data-definition="A folder full of reusable visual pieces — buttons, cards, nav bars. Any page can 'borrow' from the costume shop.">ui/</span></h4>
+        <p class="pattern-desc" data-i18n-key="m2s1-card3-desc" data-i18n-zh="服装店。任何页面都可以借用的可复用部件的衣柜。" data-i18n-en="The costume shop. A wardrobe of reusable pieces any page can borrow.">The costume shop. A wardrobe of reusable pieces any page can borrow.</p>
+      </div>
+      <div class="pattern-card" style="border-top: 3px solid var(--color-actor-5)">
+        <div class="pattern-icon" style="background: var(--color-actor-5)">🔧</div>
+        <h4 class="pattern-title" data-i18n-key="m2s1-card4-title" data-i18n-zh="<span class=&quot;term&quot; data-definition=&quot;A folder for shared logic, helper functions, and data-shaping code — the backstage crew that keeps the show running.&quot;>lib/</span>" data-i18n-en="<span class=&quot;term&quot; data-definition=&quot;A folder for shared logic, helper functions, and data-shaping code — the backstage crew that keeps the show running.&quot;>lib/</span>"><span class="term" data-definition="A folder for shared logic, helper functions, and data-shaping code — the backstage crew that keeps the show running.">lib/</span></h4>
+        <p class="pattern-desc" data-i18n-key="m2s1-card4-desc" data-i18n-zh="幕后工作人员。持有共享逻辑、辅助函数和数据转换代码。" data-i18n-en="Backstage crew. Holds the shared logic, helpers, and data-shaping code.">Backstage crew. Holds the shared logic, helpers, and data-shaping code.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ─── SCREEN 2: page.tsx — The Lead Actor ────────────────── -->
+  <div class="screen" id="module-2-screen-2">
+
+    <div class="screen-intro">
+      <h2 class="screen-title" data-i18n-key="m2s2-heading" data-i18n-zh="page.tsx——主角" data-i18n-en="page.tsx — The Lead Actor">page.tsx — The Lead Actor</h2>
+      <p data-i18n-key="m2s2-p1" data-i18n-zh="访问 /dashboard/invoices 时，app/dashboard/invoices/ 内的 page.tsx 文件就会运行。这是唯一处理该 URL 的文件。" data-i18n-en="Visit <code>/dashboard/invoices</code> and the file <span class=&quot;term&quot; data-definition=&quot;The .tsx file that renders when someone visits a specific URL — it&apos;s the lead actor, always on stage.&quot;>page.tsx</span> inside <code>app/dashboard/invoices/</code> runs. That's the only file that handles that URL.">Visit <code>/dashboard/invoices</code> and the file <span class="term" data-definition="The .tsx file that renders when someone visits a specific URL — it's the lead actor, always on stage.">page.tsx</span> inside <code>app/dashboard/invoices/</code> runs. That's the only file that handles that URL.</p>
+    </div>
+
+    <div class="icon-rows">
+      <div class="icon-row">
+        <div class="icon-circle" style="background: var(--color-actor-1)">📄</div>
+        <div>
+          <strong>app/dashboard/page.tsx</strong>
+          <p data-i18n-key="m2s2-icon1-desc" data-i18n-zh="当有人访问 /dashboard 时渲染" data-i18n-en="Renders when someone visits <code>/dashboard</code>">Renders when someone visits <code>/dashboard</code></p>
+        </div>
+      </div>
+      <div class="icon-row">
+        <div class="icon-circle" style="background: var(--color-actor-1)">📄</div>
+        <div>
+          <strong>app/dashboard/invoices/page.tsx</strong>
+          <p data-i18n-key="m2s2-icon2-desc" data-i18n-zh="当有人访问 /dashboard/invoices 时渲染" data-i18n-en="Renders when someone visits <code>/dashboard/invoices</code>">Renders when someone visits <code>/dashboard/invoices</code></p>
+        </div>
+      </div>
+      <div class="icon-row">
+        <div class="icon-circle" style="background: var(--color-actor-1)">📄</div>
+        <div>
+          <strong>app/page.tsx</strong>
+          <p data-i18n-key="m2s2-icon3-desc" data-i18n-zh="当有人访问根路径 / 时渲染" data-i18n-en="Renders when someone visits the root <code>/</code>">Renders when someone visits the root <code>/</code></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout callout-info">
+      <div class="callout-icon">📍</div>
+      <div class="callout-content">
+        <p data-i18n-key="m2s2-callout-p" data-i18n-zh="URL 和文件路径是直接连接的。<code>/dashboard/invoices</code> → <code>app/dashboard/invoices/page.tsx</code>。不需要猜测。" data-i18n-en="The URL and the file path are directly connected. <code>/dashboard/invoices</code> → <code>app/dashboard/invoices/page.tsx</code>. No guessing needed.">The URL and the file path are directly connected. <code>/dashboard/invoices</code> → <code>app/dashboard/invoices/page.tsx</code>. No guessing needed.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ─── SCREEN 3: layout.tsx — The Stage Manager ───────────── -->
+  <div class="screen" id="module-2-screen-3">
+
+    <div class="screen-intro">
+      <h2 class="screen-title" data-i18n-key="m2s3-heading" data-i18n-zh="layout.tsx——舞台经理" data-i18n-en="layout.tsx — The Stage Manager">layout.tsx — The Stage Manager</h2>
+      <p data-i18n-key="m2s3-p1" data-i18n-zh="如果 <span class=&quot;term&quot; data-definition=&quot;The .tsx file that renders when someone visits a specific URL — it&apos;s the lead actor, always on stage.&quot;>page.tsx</span> 是主角，<span class=&quot;term&quot; data-definition=&quot;A file that wraps multiple pages with shared UI — the stage manager who keeps the set consistent across scenes.&quot;>layout.tsx</span> 就是舞台经理。它用共享的 UI——导航栏、侧边栏、页脚——包裹一组页面。" data-i18n-en="If <span class=&quot;term&quot; data-definition=&quot;The .tsx file that renders when someone visits a specific URL — it&apos;s the lead actor, always on stage.&quot;>page.tsx</span> is the lead actor, <span class=&quot;term&quot; data-definition=&quot;A file that wraps multiple pages with shared UI — the stage manager who keeps the set consistent across scenes.&quot;>layout.tsx</span> is the stage manager. It wraps a group of pages with shared UI — navigation bars, sidebars, footers.">If <span class="term" data-definition="The .tsx file that renders when someone visits a specific URL — it's the lead actor, always on stage.">page.tsx</span> is the lead actor, <span class="term" data-definition="A file that wraps multiple pages with shared UI — the stage manager who keeps the set consistent across scenes.">layout.tsx</span> is the stage manager. It wraps a group of pages with shared UI — navigation bars, sidebars, footers.</p>
+    </div>
+
+    <div class="flow-steps">
+      <div class="flow-step">
+        <div class="flow-step-num">1</div>
+        <p data-i18n-key="m2s3-flow1" data-i18n-zh="根布局首先加载" data-i18n-en="Root layout loads first">Root layout loads first</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="flow-step-num">2</div>
+        <p data-i18n-key="m2s3-flow2" data-i18n-zh="仪表盘布局包裹在内" data-i18n-en="Dashboard layout wraps inside">Dashboard layout wraps inside</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="flow-step-num">3</div>
+        <p data-i18n-key="m2s3-flow3" data-i18n-zh="page.tsx 作为内容嵌入" data-i18n-en="page.tsx drops in as the content">page.tsx drops in as the content</p>
+      </div>
+    </div>
+
+    <div class="callout callout-info">
+      <div class="callout-icon">📦</div>
+      <div class="callout-content">
+        <p data-i18n-key="m2s3-callout-p" data-i18n-zh="嵌套布局在视觉上也是嵌套的。想象俄罗斯套娃——每个布局都包裹着它内部的一切。" data-i18n-en="Nested layouts nest visually too. Think Russian dolls — each layout wraps everything inside it.">Nested layouts nest visually too. Think Russian dolls — each layout wraps everything inside it.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ─── SCREEN 4: ui/ — The Costume Shop ────────────────────── -->
+  <div class="screen" id="module-2-screen-4">
+
+    <div class="screen-intro">
+      <h2 class="screen-title" data-i18n-key="m2s4-heading" data-i18n-zh="ui/——服装店" data-i18n-en="ui/ — The Costume Shop">ui/ — The Costume Shop</h2>
+      <p data-i18n-key="m2s4-p1" data-i18n-zh="<span class=&quot;term&quot; data-definition=&quot;A folder full of reusable visual pieces — buttons, cards, nav bars. Any page can &apos;borrow&apos; from the costume shop.&quot;>ui/</span> 文件夹是纯视觉 <span class=&quot;term&quot; data-definition=&quot;A piece of code that produces HTML — a visual building block. Think of it like a custom HTML tag you can reuse.&quot;>React 组件</span>的所在。按钮。卡片。导航菜单。任何页面都可能需要的东西。" data-i18n-en="The <span class=&quot;term&quot; data-definition=&quot;A folder full of reusable visual pieces — buttons, cards, nav bars. Any page can &apos;borrow&apos; from the costume shop.&quot;>ui/</span> folder is where <span class=&quot;term&quot; data-definition=&quot;A piece of code that produces HTML — a visual building block. Think of it like a custom HTML tag you can reuse.&quot;>React components</span> that are purely visual live. A button. A card. A navigation menu. Things any page might need.">The <span class="term" data-definition="A folder full of reusable visual pieces — buttons, cards, nav bars. Any page can 'borrow' from the costume shop.">ui/</span> folder is where <span class="term" data-definition="A piece of code that produces HTML — a visual building block. Think of it like a custom HTML tag you can reuse.">React components</span> that are purely visual live. A button. A card. A navigation menu. Things any page might need.</p>
+    </div>
+
+    <div class="translation-block animate-in">
+      <div class="translation-code">
+        <span class="translation-label">CODE</span>
+        <pre><code>import {
+  UserGroupIcon,
+  HomeIcon,
+  DocumentDuplicateIcon,
+} from '@heroicons/react/24/outline';
+
+const links = [
+  { name: 'Home', href: '/dashboard', icon: HomeIcon },
+  {
+    name: 'Invoices',
+    href: '/dashboard/invoices',
+    icon: DocumentDuplicateIcon,
+  },
+  { name: 'Customers', href: '/dashboard/customers', icon: UserGroupIcon },
+];
+
+export default function NavLinks() {
+  return (
+    &lt;&gt;
+      {links.map((link) =&gt; {
+        const LinkIcon = link.icon;
+        return (
+          &lt;a
+            key={link.name}
+            href={link.href}
+            className="flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3"
+          &gt;
+            &lt;LinkIcon className="w-6" /&gt;
+            &lt;p className="hidden md:block"&gt;{link.name}&lt;/p&gt;
+          &lt;/a&gt;
+        );
+      })}
+    &lt;/&gt;
+  );
+}</code></pre>
+      </div>
+      <div class="translation-english">
+        <span class="translation-label">PLAIN ENGLISH</span>
+        <div class="translation-lines">
+          <p class="tl" data-i18n-key="m2s4-tl1" data-i18n-zh="从图标库中获取一些图标图形……" data-i18n-en="Grab some icon graphics from the icon library...">Grab some icon graphics from the icon library...</p>
+          <p class="tl" data-i18n-key="m2s4-tl2" data-i18n-zh="定义导航链接——每个都有名称、URL 和要显示的图标……" data-i18n-en="Define the nav links — each has a name, URL, and which icon to show...">Define the nav links — each has a name, URL, and which icon to show...</p>
+          <p class="tl" data-i18n-key="m2s4-tl3" data-i18n-zh="发票和客户链接到 /dashboard 下的各自部分……" data-i18n-en="Invoices and Customers link to their own sections under /dashboard...">Invoices and Customers link to their own sections under /dashboard...</p>
+          <p class="tl" data-i18n-key="m2s4-tl4" data-i18n-zh="这是一个可复用的导航组件——任何页面都可以导入和使用它……" data-i18n-en="This is a reusable navigation component — any page can import and use it...">This is a reusable navigation component — any page can import and use it...</p>
+          <p class="tl" data-i18n-key="m2s4-tl5" data-i18n-zh="遍历每个链接并将其渲染为带图标的可点击按钮……" data-i18n-en="Loop through each link and render it as a clickable button with an icon...">Loop through each link and render it as a clickable button with an icon...</p>
+          <p class="tl" data-i18n-key="m2s4-tl6" data-i18n-zh="在移动端（md 以下），隐藏文本标签，只显示图标……" data-i18n-en="On mobile (below md), hide the text label and just show the icon...">On mobile (below md), hide the text label and just show the icon...</p>
+          <p class="tl" data-i18n-key="m2s4-tl7" data-i18n-zh="文本标签在移动端隐藏，在桌面端可见……" data-i18n-en="The text label stays hidden on mobile, visible on desktop...">The text label stays hidden on mobile, visible on desktop...</p>
+          <p class="tl" data-i18n-key="m2s4-tl8" data-i18n-zh="返回所有渲染的导航链接，包装在 React fragment 中……" data-i18n-en="Return all the rendered nav links wrapped in a React fragment...">Return all the rendered nav links wrapped in a React fragment...</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout callout-accent">
+      <div class="callout-icon">♻️</div>
+      <div class="callout-content">
+        <strong class="callout-title" data-i18n-key="m2s4-callout-title" data-i18n-zh="复用原则" data-i18n-en="The Reuse Principle">The Reuse Principle</strong>
+        <p data-i18n-key="m2s4-callout-p" data-i18n-zh="因为 <code>NavLinks</code> 住在 <code>ui/</code> 中，仪表盘布局可以导入一次，每个页面就都能获得相同的导航——无需重复任何代码。" data-i18n-en="Because <code>NavLinks</code> lives in <code>ui/</code>, the dashboard layout can import it once and every page in the dashboard gets the same nav — without duplicating any code.">Because <code>NavLinks</code> lives in <code>ui/</code>, the dashboard layout can import it once and every page in the dashboard gets the same nav — without duplicating any code.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ─── SCREEN 5: lib/ — Backstage Crew ────────────────────── -->
+  <div class="screen" id="module-2-screen-5">
+
+    <div class="screen-intro">
+      <h2 class="screen-title" data-i18n-key="m2s5-heading" data-i18n-zh="lib/——幕后工作人员" data-i18n-en="lib/ — Backstage Crew">lib/ — Backstage Crew</h2>
+      <p data-i18n-key="m2s5-p1" data-i18n-zh="当 <span class=&quot;term&quot; data-definition=&quot;A folder full of reusable visual pieces — buttons, cards, nav bars. Any page can &apos;borrow&apos; from the costume shop.&quot;>ui/</span> 放置你能看到的东西时，<span class=&quot;term&quot; data-definition=&quot;A folder for shared logic, helper functions, and data-shaping code — the backstage crew that keeps the show running.&quot;>lib/</span> 放置你用到的东西。<span class=&quot;term&quot; data-definition=&quot;A function that performs a specific task — like formatting a date or currency value. It takes inputs and returns an output without being tied to any one page.&quot;>工具函数</span>、数据转换器、API 辅助函数。当演员需要什么时调用的幕后工作人员。" data-i18n-en="While <span class=&quot;term&quot; data-definition=&quot;A folder full of reusable visual pieces — buttons, cards, nav bars. Any page can &apos;borrow&apos; from the costume shop.&quot;>ui/</span> holds things you can see, <span class=&quot;term&quot; data-definition=&quot;A folder for shared logic, helper functions, and data-shaping code — the backstage crew that keeps the show running.&quot;>lib/</span> holds things you use. <span class=&quot;term&quot; data-definition=&quot;A function that performs a specific task — like formatting a date or currency value. It takes inputs and returns an output without being tied to any one page.&quot;>Utility functions</span>, data transformers, API helpers. The backstage crew that the cast calls on when they need something.">While <span class="term" data-definition="A folder full of reusable visual pieces — buttons, cards, nav bars. Any page can 'borrow' from the costume shop.">ui/</span> holds things you can see, <span class="term" data-definition="A folder for shared logic, helper functions, and data-shaping code — the backstage crew that keeps the show running.">lib/</span> holds things you use. <span class="term" data-definition="A function that performs a specific task — like formatting a date or currency value. It takes inputs and returns an output without being tied to any one page.">Utility functions</span>, data transformers, API helpers. The backstage crew that the cast calls on when they need something.</p>
+    </div>
+
+    <div class="step-cards">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <strong data-i18n-key="m2s5-step1-title" data-i18n-zh="一个页面需要格式化美元金额" data-i18n-en="A page needs to format a dollar amount">A page needs to format a dollar amount</strong>
+          <p data-i18n-key="m2s5-step1-desc" data-i18n-zh="不是在页面中编写格式化逻辑，而是从 <code>lib/utils.ts</code> 导入一个<span class=&quot;term&quot; data-definition=&quot;A function that performs a specific task — like formatting a date or currency value. It takes inputs and returns an output without being tied to any one page.&quot;>工具函数</span>" data-i18n-en="Instead of writing the formatting logic in the page, it imports a <span class=&quot;term&quot; data-definition=&quot;A function that performs a specific task — like formatting a date or currency value. It takes inputs and returns an output without being tied to any one page.&quot;>utility function</span> from <code>lib/utils.ts</code>">Instead of writing the formatting logic in the page, it imports a <span class="term" data-definition="A function that performs a specific task — like formatting a date or currency value. It takes inputs and returns an output without being tied to any one page.">utility function</span> from <code>lib/utils.ts</code></p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <strong data-i18n-key="m2s5-step2-title" data-i18n-zh="页面专注于要显示的内容" data-i18n-en="The page focuses on what to display">The page focuses on what to display</strong>
+          <p data-i18n-key="m2s5-step2-desc" data-i18n-zh="它将原始数字交给工具函数，然后得到格式化的字符串，如 <code>$1,234.56</code>" data-i18n-en="It hands the raw number to the utility function and gets back a nicely formatted string like <code>$1,234.56</code>">It hands the raw number to the utility function and gets back a nicely formatted string like <code>$1,234.56</code></p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <strong data-i18n-key="m2s5-step3-title" data-i18n-zh="任何其他页面都可以使用相同的函数" data-i18n-en="Any other page can use the same function">Any other page can use the same function</strong>
+          <p data-i18n-key="m2s5-step3-desc" data-i18n-zh="整个应用保持一致——每个美元金额的格式都相同，在一个地方维护。" data-i18n-en="Consistency across the whole app — every dollar amount formats the same way, maintained in one place.">Consistency across the whole app — every dollar amount formats the same way, maintained in one place.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ─── SCREEN 6: Group Chat — Cast Introductions ─────────── -->
+  <div class="screen" id="module-2-screen-6">
+
+    <div class="screen-intro">
+      <h2 class="screen-title" data-i18n-key="m2s6-heading" data-i18n-zh="演员们相互认识" data-i18n-en="The Cast Meets Each Other">The Cast Meets Each Other</h2>
+      <p data-i18n-key="m2s6-p1" data-i18n-zh="以下是当组件在舞台上实际相互交流时会发生的事情。" data-i18n-en="Here's what happens when the components actually talk to each other on stage.">Here's what happens when the components actually talk to each other on stage.</p>
+    </div>
+
+    <div class="chat-window" id="chat-module2">
+      <div class="chat-messages">
+        <div class="chat-message" data-msg="0" data-sender="page" style="display:none">
+          <div class="chat-avatar" style="background: var(--color-actor-1)">P</div>
+          <div class="chat-bubble">
+            <span class="chat-sender" style="color: var(--color-actor-1)" data-i18n-key="m2s6-chat0-sender" data-i18n-zh="page.tsx" data-i18n-en="page.tsx">page.tsx</span>
+            <p data-i18n-key="m2s6-chat0" data-i18n-zh="大家好，今天我在渲染 /dashboard/invoices。" data-i18n-en="Hey everyone, I'm rendering /dashboard/invoices today.">Hey everyone, I'm rendering /dashboard/invoices today.</p>
+          </div>
+        </div>
+        <div class="chat-message" data-msg="1" data-sender="layout" style="display:none">
+          <div class="chat-avatar" style="background: var(--color-actor-2)">L</div>
+          <div class="chat-bubble">
+            <span class="chat-sender" style="color: var(--color-actor-2)" data-i18n-key="m2s6-chat1-sender" data-i18n-zh="layout.tsx" data-i18n-en="layout.tsx">layout.tsx</span>
+            <p data-i18n-key="m2s6-chat1" data-i18n-zh="我已经准备好了侧边栏和导航——我会包裹你的页面内容。" data-i18n-en="I've got the sidebar and nav ready — I'll wrap your page content.">I've got the sidebar and nav ready — I'll wrap your page content.</p>
+          </div>
+        </div>
+        <div class="chat-message" data-msg="2" data-sender="ui" style="display:none">
+          <div class="chat-avatar" style="background: var(--color-actor-3)">U</div>
+          <div class="chat-bubble">
+            <span class="chat-sender" style="color: var(--color-actor-3)" data-i18n-key="m2s6-chat2-sender" data-i18n-zh="ui/nav-links.tsx" data-i18n-en="ui/nav-links.tsx">ui/nav-links.tsx</span>
+            <p data-i18n-key="m2s6-chat2" data-i18n-zh="用我来做侧边栏链接——我已经样式化好了！" data-i18n-en="Use me for the sidebar links — I'm already styled and everything!">Use me for the sidebar links — I'm already styled and everything!</p>
+          </div>
+        </div>
+        <div class="chat-message" data-msg="3" data-sender="page" style="display:none">
+          <div class="chat-avatar" style="background: var(--color-actor-1)">P</div>
+          <div class="chat-bubble">
+            <span class="chat-sender" style="color: var(--color-actor-1)" data-i18n-key="m2s6-chat3-sender" data-i18n-zh="page.tsx" data-i18n-en="page.tsx">page.tsx</span>
+            <p data-i18n-key="m2s6-chat3" data-i18n-zh="很好。我还需要格式化一些发票金额——lib/utils，你有辅助函数吗？" data-i18n-en="Nice. I also need to format some invoice amounts — lib/utils, you got a helper for that?">Nice. I also need to format some invoice amounts — lib/utils, you got a helper for that?</p>
+          </div>
+        </div>
+        <div class="chat-message" data-msg="4" data-sender="lib" style="display:none">
+          <div class="chat-avatar" style="background: var(--color-actor-5)">S</div>
+          <div class="chat-bubble">
+            <span class="chat-sender" style="color: var(--color-actor-5)" data-i18n-key="m2s6-chat4-sender" data-i18n-zh="lib/utils.ts" data-i18n-en="lib/utils.ts">lib/utils.ts</span>
+            <p data-i18n-key="m2s6-chat4" data-i18n-zh="formatCurrency？我来搞定。从任何页面调用我，我来处理剩下的。" data-i18n-en="formatCurrency? I'm your guy. Call me from any page, I'll handle the rest.">formatCurrency? I'm your guy. Call me from any page, I'll handle the rest.</p>
+          </div>
+        </div>
+        <div class="chat-message" data-msg="5" data-sender="page" style="display:none">
+          <div class="chat-avatar" style="background: var(--color-actor-1)">P</div>
+          <div class="chat-bubble">
+            <span class="chat-sender" style="color: var(--color-actor-1)" data-i18n-key="m2s6-chat5-sender" data-i18n-zh="page.tsx" data-i18n-en="page.tsx">page.tsx</span>
+            <p data-i18n-key="m2s6-chat5" data-i18n-zh="完美。每个人都在自己的位置——让我们开始表演吧。" data-i18n-en="Perfect. Everyone in their place — let's put on a show.">Perfect. Everyone in their place — let's put on a show.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="chat-typing" id="chat-module2-typing" style="display:none">
+        <div class="chat-avatar" id="chat-module2-typing-avatar">?</div>
+        <div class="chat-typing-dots">
+          <span class="typing-dot"></span>
+          <span class="typing-dot"></span>
+          <span class="typing-dot"></span>
+        </div>
+      </div>
+
+      <div class="chat-controls">
+        <button class="btn chat-next-btn" data-i18n-key="m2s6-btn-next" data-i18n-zh="下一条消息" data-i18n-en="Next Message">Next Message</button>
+        <button class="btn chat-all-btn" data-i18n-key="m2s6-btn-all" data-i18n-zh="全部播放" data-i18n-en="Play All">Play All</button>
+        <button class="btn chat-reset-btn" data-i18n-key="m2s6-btn-replay" data-i18n-zh="重播" data-i18n-en="Replay">Replay</button>
+        <span class="chat-progress"></span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ─── SCREEN 7: Quiz ─────────────────────────────────────── -->
+  <div class="screen" id="module-2-screen-7">
+
+    <div class="screen-intro">
+      <h2 class="screen-title" data-i18n-key="m2s7-heading" data-i18n-zh="它应该放在哪里？" data-i18n-en="Where Does It Go?">Where Does It Go?</h2>
+      <p data-i18n-key="m2s7-p1" data-i18n-zh="是时候测试你的选角技巧了。这些问题是关于判断力的，而不是记忆力。" data-i18n-en="Time to test your casting skills. These questions are about judgment, not memorization.">Time to test your casting skills. These questions are about judgment, not memorization.</p>
+    </div>
+
+    <div class="quiz-container" id="quiz-module2">
+      <div class="quiz-question-block"
+           data-correct="option-b"
+           data-explanation-right="Exactly! UI components live in ui/ so any page can reuse them without copying code."
+           data-explanation-wrong="Not quite — a dropdown that appears on multiple pages should live in ui/, not in a single page file. That way every page can import the same component.">
+        <h3 class="quiz-question" data-i18n-key="m2s7-q1" data-i18n-zh="你需要一个在下拉菜单，它在你的应用中五个不同页面上一致出现。你应该把它放在哪里？" data-i18n-en="You need a dropdown menu that appears consistently on five different pages across your app. Where do you put it?">You need a dropdown menu that appears consistently on five different pages across your app. Where do you put it?</h3>
+        <div class="quiz-options">
+          <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+            <div class="quiz-option-radio"></div>
+            <span data-i18n-key="m2s7-q1-a" data-i18n-zh="在每个 URL 对应的 page.tsx 中" data-i18n-en="In the page.tsx that renders for each URL">In the page.tsx that renders for each URL</span>
+          </button>
+          <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+            <div class="quiz-option-radio"></div>
+            <span data-i18n-key="m2s7-q1-b" data-i18n-zh="在 app/ui/ 中作为可复用组件" data-i18n-en="In app/ui/ as a reusable component">In app/ui/ as a reusable component</span>
+          </button>
+          <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+            <div class="quiz-option-radio"></div>
+            <span data-i18n-key="m2s7-q1-c" data-i18n-zh="在 lib/ 中和工具函数放在一起" data-i18n-en="In lib/ alongside the utility functions">In lib/ alongside the utility functions</span>
+          </button>
+        </div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question-block"
+           data-correct="option-c"
+           data-explanation-right="Spot on! Utility functions go in lib/, not in page files. That way they can be called from any page and stay consistent."
+           data-explanation-wrong="Not quite — a utility function for formatting dollar amounts belongs in lib/ with other shared logic, not in ui/ (which is for visual pieces only).">
+        <h3 class="quiz-question" data-i18n-key="m2s7-q2" data-i18n-zh="你有一个格式化美元金额的函数——<code>formatCurrency(1999)</code> 返回 <code>&quot;$19.99&quot;</code>。它应该放在哪里？" data-i18n-en="You have a function that formats dollar amounts — <code>formatCurrency(1999)</code> returns <code>&quot;$19.99&quot;</code>. Where should it live?">You have a function that formats dollar amounts — <code>formatCurrency(1999)</code> returns <code>"$19.99"</code>. Where should it live?</h3>
+        <div class="quiz-options">
+          <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+            <div class="quiz-option-radio"></div>
+            <span data-i18n-key="m2s7-q2-a" data-i18n-zh="在显示发票的 page.tsx 中" data-i18n-en="In the page.tsx that displays the invoice">In the page.tsx that displays the invoice</span>
+          </button>
+          <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+            <div class="quiz-option-radio"></div>
+            <span data-i18n-key="m2s7-q2-b" data-i18n-zh="在 app/ui/ 中作为视觉组件" data-i18n-en="In app/ui/ as a visual component">In app/ui/ as a visual component</span>
+          </button>
+          <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+            <div class="quiz-option-radio"></div>
+            <span data-i18n-key="m2s7-q2-c" data-i18n-zh="在 app/lib/utils.ts 中作为共享工具" data-i18n-en="In app/lib/utils.ts as a shared utility">In app/lib/utils.ts as a shared utility</span>
+          </button>
+        </div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question-block"
+           data-correct="option-a"
+           data-explanation-right="Right! The URL /dashboard/invoices maps directly to app/dashboard/invoices/page.tsx — the page.tsx file in that folder is the lead actor for that URL."
+           data-explanation-wrong="Not quite — the file that handles /dashboard/invoices is app/dashboard/invoices/page.tsx. The URL path directly maps to the file path, with page.tsx as the URL handler.">
+        <h3 class="quiz-question" data-i18n-key="m2s7-q3" data-i18n-zh="用户访问 <code>/dashboard/invoices</code> 并看到一张发票表格。哪个文件是渲染它的「主角」？" data-i18n-en="A user visits <code>/dashboard/invoices</code> and sees an invoice table. Which file is the &quot;lead actor&quot; that renders this?">A user visits <code>/dashboard/invoices</code> and sees an invoice table. Which file is the "lead actor" that renders this?</h3>
+        <div class="quiz-options">
+          <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+            <div class="quiz-option-radio"></div>
+            <span data-i18n-key="m2s7-q3-a" data-i18n-zh="app/dashboard/invoices/page.tsx" data-i18n-en="app/dashboard/invoices/page.tsx">app/dashboard/invoices/page.tsx</span>
+          </button>
+          <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+            <div class="quiz-option-radio"></div>
+            <span data-i18n-key="m2s7-q3-b" data-i18n-zh="app/dashboard/layout.tsx" data-i18n-en="app/dashboard/layout.tsx">app/dashboard/layout.tsx</span>
+          </button>
+          <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+            <div class="quiz-option-radio"></div>
+            <span data-i18n-key="m2s7-q3-c" data-i18n-zh="app/lib/utils.ts" data-i18n-en="app/lib/utils.ts">app/lib/utils.ts</span>
+          </button>
+        </div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <button class="quiz-check-btn" onclick="checkQuiz('quiz-module2')" data-i18n-key="m2s7-btn-check" data-i18n-zh="检查答案" data-i18n-en="Check Answers">Check Answers</button>
+      <button class="quiz-reset-btn" onclick="resetQuiz('quiz-module2')" data-i18n-key="m2s7-btn-retry" data-i18n-zh="再试一次" data-i18n-en="Try Again">Try Again</button>
+    </div>
+
+  </div>
+
+  <!-- ─── SCREEN 8: Glossary ─────────────────────────────────── -->
+  <div class="screen" id="module-2-screen-8">
+
+    <div class="screen-intro">
+      <h2 class="screen-title" data-i18n-key="m2s8-heading" data-i18n-zh="演职人员术语表" data-i18n-en="Cast Glossary">Cast Glossary</h2>
+      <p data-i18n-key="m2s8-p1" data-i18n-zh="本模块中每个术语的简单定义。" data-i18n-en="Every term from this module, defined plainly.">Every term from this module, defined plainly.</p>
+    </div>
+
+    <div class="glossary-grid">
+      <div class="glossary-item">
+        <dt><span class="term" data-definition="The .tsx file that renders when someone visits a specific URL — it's the lead actor, always on stage.">page.tsx</span></dt>
+        <dd data-i18n-key="m2s8-glossary-pagetx" data-i18n-zh="每个 URL 的主角。当有人访问 /dashboard 时，app/dashboard/page.tsx 运行并返回 HTML。" data-i18n-en="The lead actor of each URL. When someone visits /dashboard, app/dashboard/page.tsx runs and returns the HTML.">The lead actor of each URL. When someone visits /dashboard, app/dashboard/page.tsx runs and returns the HTML.</dd>
+      </div>
+      <div class="glossary-item">
+        <dt><span class="term" data-definition="A file that wraps multiple pages with shared UI — the stage manager who keeps the set consistent across scenes.">layout.tsx</span></dt>
+        <dd data-i18n-key="m2s8-glossary-layout" data-i18n-zh="舞台经理。用共享的导航、侧边栏或页脚包裹一组页面，这样你就不必重复它们。" data-i18n-en="The stage manager. Wraps a group of pages with shared navigation, sidebars, or footers so you don't have to repeat them.">The stage manager. Wraps a group of pages with shared navigation, sidebars, or footers so you don't have to repeat them.</dd>
+      </div>
+      <div class="glossary-item">
+        <dt><span class="term" data-definition="A folder full of reusable visual pieces — buttons, cards, nav bars. Any page can 'borrow' from the costume shop.">ui/</span></dt>
+        <dd data-i18n-key="m2s8-glossary-ui" data-i18n-zh="服装店。包含视觉组件——按钮、卡片、导航菜单——任何页面都可以导入和复用。" data-i18n-en="The costume shop. Contains visual components — buttons, cards, nav menus — that any page can import and reuse.">The costume shop. Contains visual components — buttons, cards, nav menus — that any page can import and reuse.</dd>
+      </div>
+      <div class="glossary-item">
+        <dt><span class="term" data-definition="A folder for shared logic, helper functions, and data-shaping code — the backstage crew that keeps the show running.">lib/</span></dt>
+        <dd data-i18n-key="m2s8-glossary-lib" data-i18n-zh="幕后工作人员。持有共享逻辑、格式化辅助函数和数据转换函数，任何页面都可以调用。" data-i18n-en="Backstage crew. Holds shared logic, formatting helpers, and data-transforming functions that any page can call on.">Backstage crew. Holds shared logic, formatting helpers, and data-transforming functions that any page can call on.</dd>
+      </div>
+      <div class="glossary-item">
+        <dt><span class="term" data-definition="A piece of code that produces HTML — a visual building block. Think of it like a custom HTML tag you can reuse.">React component</span></dt>
+        <dd data-i18n-key="m2s8-glossary-component" data-i18n-zh="一个可复用的 UI 片段——比如按钮、卡片或导航菜单。你写一次，就可以放到任何需要的页面中。" data-i18n-en="A reusable piece of UI — like a button, card, or nav menu. You write it once and drop it into any page that needs it.">A reusable piece of UI — like a button, card, or nav menu. You write it once and drop it into any page that needs it.</dd>
+      </div>
+      <div class="glossary-item">
+        <dt><span class="term" data-definition="A function that performs a specific task — like formatting a date or currency value. It takes inputs and returns an output without being tied to any one page.">utility function</span></dt>
+        <dd data-i18n-key="m2s8-glossary-utility" data-i18n-zh="执行特定任务的辅助函数——比如格式化日期或将数字转换为货币。页面在需要时导入它。" data-i18n-en="A helper function that does a specific job — like formatting a date or converting a number to currency. Pages import it when they need it.">A helper function that does a specific job — like formatting a date or converting a number to currency. Pages import it when they need it.</dd>
+      </div>
+      <div class="glossary-item">
+        <dt><span class="term" data-definition="The @ symbol is an alias that stands for the 'src' (or 'app') directory. So @/ui/button means ./src/ui/button — saves you from writing long relative paths.">@/ alias</span></dt>
+        <dd data-i18n-key="m2s8-glossary-alias" data-i18n-zh="app 目录的快捷方式。不必写 <code>../../ui/button</code>，你写 <code>@/ui/button</code>。少打字，效果一样。" data-i18n-en="A shortcut for the app directory. Instead of writing <code>../../ui/button</code>, you write <code>@/ui/button</code>. Less typing, same result.">A shortcut for the app directory. Instead of writing <code>../../ui/button</code>, you write <code>@/ui/button</code>. Less typing, same result.</dd>
+      </div>
+    </div>
+
+  </div>
+
+</section>

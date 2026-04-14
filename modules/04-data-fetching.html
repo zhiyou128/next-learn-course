@@ -1,0 +1,363 @@
+<section class="module" id="module-4" style="background: var(--color-bg-warm);">
+
+  <!-- MODULE HEADER -->
+  <header class="module-header">
+    <div class="module-number">04</div>
+    <h1 class="module-title" data-i18n-key="m4-module-title" data-i18n-zh="数据获取 — 仪表板如何获取数据" data-i18n-en="Data Fetching">数据获取 — 仪表板如何获取数据</h1>
+    <p class="module-subtitle" data-i18n-key="m4-module-subtitle" data-i18n-zh="数据库查询、Promise.all 并行请求和 SQL 模板字面量" data-i18n-en="How the dashboard gets its data from the database">数据库查询、Promise.all 并行请求和 SQL 模板字面量</p>
+  </header>
+
+  <!-- SCREEN 1: The Hook -->
+  <div class="screen" id="module-4-screen-1">
+    <div class="screen-content">
+      <div class="screen-label">Screen 1 of 6</div>
+
+      <div class="hero-visual">
+        <div class="icon-rows">
+          <div class="icon-row">
+            <div class="icon-circle" style="background: var(--color-accent)">📊</div>
+            <div>
+              <strong data-i18n-key="m4-s1-iconrow1-strong" data-i18n-zh="你看到的：图表、数字、表格" data-i18n-en="You see: charts, numbers, tables">你看到的：图表、数字、表格</strong>
+              <p data-i18n-key="m4-s1-iconrow1-p" data-i18n-zh="收入指标、发票列表、客户数量 — 全在一个页面上" data-i18n-en="Revenue metrics, invoice lists, customer counts — all on one page">收入指标、发票列表、客户数量 — 全在一个页面上</p>
+            </div>
+          </div>
+          <div class="icon-row">
+            <div class="icon-circle" style="background: var(--color-actor-2)">❓</div>
+            <div>
+              <strong data-i18n-key="m4-s1-iconrow2-strong" data-i18n-zh="但这一切都是从哪里来的？" data-i18n-en="But where does it all come from?">但这一切都是从哪里来的？</strong>
+              <p data-i18n-key="m4-s1-iconrow2-p" data-i18n-zh="没有 API 路由，没有 fetch() 调用 — 数据就这样...出现了" data-i18n-en="No API routes, no fetch() calls in sight — the data just... appears">没有 API 路由，没有 fetch() 调用 — 数据就这样...出现了</p>
+            </div>
+          </div>
+          <div class="icon-row">
+            <div class="icon-circle" style="background: var(--color-actor-3)">🗄️</div>
+            <div>
+              <strong data-i18n-key="m4-s1-iconrow3-strong" data-i18n-zh="答案：数据库" data-i18n-en="Answer: the database">答案：数据库</strong>
+              <p data-i18n-key="m4-s1-iconrow3-p" data-i18n-zh="服务器组件访问数据库，精确获取每个组件需要的数据" data-i18n-en="Server Components reach into a database and pull exactly what each component needs">服务器组件访问数据库，精确获取每个组件需要的数据</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-block">
+        <p data-i18n-key="m4-s1-p1" data-i18n-zh="在 Next.js App Router 中，组件可以直接与数据库通信。不需要 API 层 — 组件本身就是 API 消费者。" data-i18n-en="In Next.js App Router, components can talk directly to the database. No API layer needed — the component is the API consumer.">在 Next.js App Router 中，组件可以直接与数据库通信。不需要 API 层 — 组件本身就是 API 消费者。</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SCREEN 2: The Librarian Metaphor -->
+  <div class="screen" id="module-4-screen-2">
+    <div class="screen-content">
+
+      <div class="callout callout-accent">
+        <div class="callout-icon">💡</div>
+        <div class="callout-content">
+          <strong class="callout-title" data-i18n-key="m4-s2-callout-title" data-i18n-zh="数据库是一个图书馆员" data-i18n-en="The Database Is a Librarian">数据库是一个图书馆员</strong>
+          <p data-i18n-key="m4-s2-callout-p" data-i18n-zh="它不思考。它不决定。它只是检索你要求的内容。<code>lib/data.ts</code> 中的 fetch 函数就像图书馆员的请求：「给我所有状态为『已支付』的发票，按日期排序。」" data-i18n-en="It doesn't think. It doesn't decide. It just retrieves what you ask for. The fetch functions in <code>lib/data.ts</code> are like librarian requests: &quot;get me all invoices where status is paid, sorted by date.&quot;">它不思考。它不决定。它只是检索你要求的内容。<code>lib/data.ts</code> 中的 fetch 函数就像图书馆员的请求：「给我所有状态为『已支付』的发票，按日期排序。」</p>
+        </div>
+      </div>
+
+      <div class="pattern-cards">
+        <div class="pattern-card" style="border-top: 3px solid var(--color-accent)">
+          <div class="pattern-icon" style="background: var(--color-accent)">📖</div>
+          <h4 class="pattern-title" data-i18n-key="m4-s2-pattern1-title" data-i18n-zh="图书馆员的目录" data-i18n-en="The Librarian's Catalog">图书馆员的目录</h4>
+          <p class="pattern-desc" data-i18n-key="m4-s2-pattern1-desc" data-i18n-zh="数据库以表格的形式存储数据。每个表格就像一个目录抽屉：发票、客户、收入。" data-i18n-en="A database holds data in tables. Each table is like a catalog drawer: invoices, customers, revenue.">数据库以表格的形式存储数据。每个表格就像一个目录抽屉：发票、客户、收入。</p>
+        </div>
+        <div class="pattern-card" style="border-top: 3px solid var(--color-actor-2)">
+          <div class="pattern-icon" style="background: var(--color-actor-2)">🔍</div>
+          <h4 class="pattern-title" data-i18n-key="m4-s2-pattern2-title" data-i18n-zh="完美的记忆力" data-i18n-en="The Perfect Memory">完美的记忆力</h4>
+          <p class="pattern-desc" data-i18n-key="m4-s2-pattern2-desc" data-i18n-zh="用 SQL 向数据库提问，它会立即检索答案。它从不忘记，从不犯错。" data-i18n-en="Ask the database a question in SQL and it retrieves the answer instantly. It never forgets, never makes mistakes.">用 SQL 向数据库提问，它会立即检索答案。它从不忘记，从不犯错。</p>
+        </div>
+        <div class="pattern-card" style="border-top: 3px solid var(--color-actor-3)">
+          <div class="pattern-icon" style="background: var(--color-actor-3)">⚡</div>
+          <h4 class="pattern-title" data-i18n-key="m4-s2-pattern3-title" data-i18n-zh="无需额外步骤" data-i18n-en="No Extra Steps">无需额外步骤</h4>
+          <p class="pattern-desc" data-i18n-key="m4-s2-pattern3-desc" data-i18n-zh="在 App Router 中，你可以直接在服务器组件内部 await 数据库调用。中间不需要 API 路由。" data-i18n-en="In App Router, you await database calls directly inside Server Components. No API route in between.">在 App Router 中，你可以直接在服务器组件内部 await 数据库调用。中间不需要 API 路由。</p>
+        </div>
+      </div>
+
+      <div class="text-block">
+        <p data-i18n-key="m4-s2-p1" data-i18n-zh="这里的数据库是 PostgreSQL，一种以有组织的表格存储数据并可以使用 SQL 查询的数据库。" data-i18n-en="The database here is PostgreSQL, a type of database that stores data in organized tables you can query with SQL.">这里的数据库是 PostgreSQL，一种以有组织的表格存储数据并可以使用 SQL 查询的数据库。</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SCREEN 3: Code↔English Translation Block — Parallel Queries -->
+  <div class="screen" id="module-4-screen-3">
+    <div class="screen-content">
+
+      <h2 class="screen-heading" data-i18n-key="m4-s3-heading" data-i18n-zh="并行查询：同时开始所有问题" data-i18n-en="Parallel Queries: Starting All Questions at Once">并行查询：同时开始所有问题</h2>
+
+      <div class="text-block">
+        <p data-i18n-key="m4-s3-p1" data-i18n-zh="想象一下，同时向图书馆员提出三个问题，而不是等待每个答案后再问下一个。这就是 Promise.all。" data-i18n-en="Imagine asking a librarian three questions at the same time instead of waiting for each answer before asking the next. That's Promise.all.">想象一下，同时向图书馆员提出三个问题，而不是等待每个答案后再问下一个。这就是 Promise.all。</p>
+      </div>
+
+      <div class="translation-block animate-in">
+        <div class="translation-code">
+          <span class="translation-label">CODE</span>
+          <pre><code>
+<span class="code-line"><span class="code-comment">// All three queries start at the same time</span></span>
+<span class="code-line"><span class="code-keyword">const</span> invoiceCountPromise = sql<span class="code-string">`SELECT COUNT(*) FROM invoices`</span>;</span>
+<span class="code-line"><span class="code-keyword">const</span> customerCountPromise = sql<span class="code-string">`SELECT COUNT(*) FROM customers`</span>;</span>
+<span class="code-line"><span class="code-keyword">const</span> invoiceStatusPromise = sql<span class="code-string">`SELECT SUM(CASE WHEN status = 'paid' THEN amount ELSE 0 END)...`</span>;</span>
+<span class="code-line"></span>
+<span class="code-line"><span class="code-comment">// Wait for all three to finish — in parallel</span></span>
+<span class="code-line"><span class="code-keyword">const</span> data = <span class="code-keyword">await</span> <span class="code-function">Promise.all</span>([</span>
+<span class="code-line">  invoiceCountPromise,</span>
+<span class="code-line">  customerCountPromise,</span>
+<span class="code-line">  invoiceStatusPromise,</span>
+<span class="code-line">]);</span>
+          </code></pre>
+        </div>
+        <div class="translation-english">
+          <span class="translation-label">PLAIN ENGLISH</span>
+          <div class="translation-lines">
+            <p class="tl" data-i18n-key="m4-s3-tl1" data-i18n-zh="让图书馆员计算所有发票——但先不要等待答案。" data-i18n-en="Tell the librarian to count all invoices — but don't wait for the answer yet.">让图书馆员计算所有发票——但先不要等待答案。</p>
+            <p class="tl" data-i18n-key="m4-s3-tl2" data-i18n-zh="让图书馆员计算所有客户——同时开始。" data-i18n-en="Tell the librarian to count all customers — started at the same time.">让图书馆员计算所有客户——同时开始。</p>
+            <p class="tl" data-i18n-key="m4-s3-tl3" data-i18n-zh="让图书馆员计算已支付与待处理的总额——也是同时开始。" data-i18n-en="Tell the librarian to calculate paid vs. pending totals — also started simultaneously.">让图书馆员计算已支付与待处理的总额——也是同时开始。</p>
+            <p class="tl" data-i18n-key="m4-s3-tl4" data-i18n-zh="现在等待所有三个答案同时返回。" data-i18n-en="Now wait for all three answers to come back at once.">现在等待所有三个答案同时返回。</p>
+            <p class="tl" data-i18n-key="m4-s3-tl5" data-i18n-zh="Promise.all 将三个进行中的请求捆绑在一起，只有当三个都有答案时才解析。" data-i18n-en="Promise.all bundles the three in-flight requests and resolves only when all three have answers.">Promise.all 将三个进行中的请求捆绑在一起，只有当三个都有答案时才解析。</p>
+            <p class="tl" data-i18n-key="m4-s3-tl6" data-i18n-zh="所有三个都在任何一个完成之前开始——这就是并行获取。" data-i18n-en="All three started before any of them finished — that's parallel fetching.">所有三个都在任何一个完成之前开始——这就是并行获取。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flow-steps">
+        <div class="flow-step">
+          <div class="flow-step-num">1</div>
+          <p data-i18n-key="m4-s3-step1" data-i18n-zh="三个查询同时触发" data-i18n-en="Three queries fire simultaneously">三个查询同时触发</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-step-num">2</div>
+          <p data-i18n-key="m4-s3-step2" data-i18n-zh="数据库同时处理它们" data-i18n-en="Database processes them concurrently">数据库同时处理它们</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-step-num">3</div>
+          <p data-i18n-key="m4-s3-step3" data-i18n-zh="所有结果同时返回" data-i18n-en="All results return at once">所有结果同时返回</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SCREEN 4: Data Flow Animation -->
+  <div class="screen" id="module-4-screen-4">
+    <div class="screen-content">
+
+      <h2 class="screen-heading" data-i18n-key="m4-s4-heading" data-i18n-zh="数据之旅：从数据库到仪表板" data-i18n-en="The Data Journey: From Database to Dashboard">数据之旅：从数据库到仪表板</h2>
+
+      <div class="text-block">
+        <p data-i18n-key="m4-s4-p1" data-i18n-zh="以下是当用户访问 <code>/dashboard</code> 时实际发生的事情。点击 <strong>下一步</strong> 来追踪这段旅程。" data-i18n-en="Here's what actually happens when a user visits <code>/dashboard</code>. Click <strong>Next Step</strong> to trace the journey.">以下是当用户访问 <code>/dashboard</code> 时实际发生的事情。点击 <strong>下一步</strong> 来追踪这段旅程。</p>
+      </div>
+
+      <div class="flow-animation" id="flow-module4" data-steps="[
+        {&quot;highlight&quot;:&quot;flow-actor-1&quot;,&quot;label&quot;:&quot;User visits /dashboard&quot;},
+        {&quot;highlight&quot;:&quot;flow-actor-1&quot;,&quot;label&quot;:&quot;Page Component calls fetchRevenue()&quot;,&quot;packet&quot;:true,&quot;from&quot;:&quot;actor-1&quot;,&quot;to&quot;:&quot;actor-2&quot;},
+        {&quot;highlight&quot;:&quot;flow-actor-2&quot;,&quot;label&quot;:&quot;fetchRevenue() sends SQL query&quot;,&quot;packet&quot;:true,&quot;from&quot;:&quot;actor-2&quot;,&quot;to&quot;:&quot;actor-3&quot;},
+        {&quot;highlight&quot;:&quot;flow-actor-3&quot;,&quot;label&quot;:&quot;Database searches rows&quot;,&quot;packet&quot;:true,&quot;from&quot;:&quot;actor-3&quot;,&quot;to&quot;:&quot;actor-2&quot;},
+        {&quot;highlight&quot;:&quot;flow-actor-2&quot;,&quot;label&quot;:&quot;Database returns rows&quot;,&quot;packet&quot;:true,&quot;from&quot;:&quot;actor-3&quot;,&quot;to&quot;:&quot;actor-1&quot;},
+        {&quot;highlight&quot;:&quot;flow-actor-1&quot;,&quot;label&quot;:&quot;Component renders HTML with the data&quot;},
+        {&quot;highlight&quot;:&quot;flow-actor-1&quot;,&quot;label&quot;:&quot;Browser displays the page&quot;}
+      ]">
+        <div class="flow-actors">
+          <div class="flow-actor" id="flow-actor-1">
+            <div class="flow-actor-icon">📄</div>
+            <span>Page Component</span>
+          </div>
+          <div class="flow-actor" id="flow-actor-2">
+            <div class="flow-actor-icon">📚</div>
+            <span>fetchRevenue()</span>
+          </div>
+          <div class="flow-actor" id="flow-actor-3">
+            <div class="flow-actor-icon">🗄️</div>
+            <span>Database</span>
+          </div>
+        </div>
+        <div class="flow-packet" id="flow-packet"></div>
+        <div class="flow-step-label" id="flow-label" data-i18n-key="m4-s4-flow-label" data-i18n-zh="点击「下一步」开始" data-i18n-en="Click &quot;Next Step&quot; to begin">点击「下一步」开始</div>
+        <div class="flow-controls">
+          <button class="btn flow-next-btn" data-i18n-key="m4-s4-btn-next" data-i18n-zh="下一步" data-i18n-en="Next Step">下一步</button>
+          <button class="btn flow-reset-btn" data-i18n-key="m4-s4-btn-restart" data-i18n-zh="重新开始" data-i18n-en="Restart">重新开始</button>
+          <span class="flow-progress"></span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SCREEN 5: Pattern Cards — Three Key Patterns -->
+  <div class="screen" id="module-4-screen-5">
+    <div class="screen-content">
+
+      <h2 class="screen-heading" data-i18n-key="m4-s5-heading" data-i18n-zh="你会到处看到的三个模式" data-i18n-en="Three Patterns You'll See Everywhere">你会到处看到的三个模式</h2>
+
+      <div class="pattern-cards">
+        <div class="pattern-card" style="border-top: 3px solid var(--color-accent)">
+          <div class="pattern-icon" style="background: var(--color-accent)">🔗</div>
+          <h4 class="pattern-title" data-i18n-key="m4-s5-pattern1-title" data-i18n-zh="SQL 模板字面量" data-i18n-en="SQL Template Literals">SQL 模板字面量</h4>
+          <p class="pattern-desc" data-i18n-key="m4-s5-pattern1-desc" data-i18n-zh="向数据库提问的更安全方式——它可以防止黑客注入恶意代码。模板字面量语法告诉数据库什么是问题，什么是值。" data-i18n-en="A safer way to ask the database questions — it prevents hackers from injecting malicious code. The template literal syntax tells the database exactly what is a question and what is a value.">向数据库提问的更安全方式——它可以防止黑客注入恶意代码。模板字面量语法告诉数据库什么是问题，什么是值。</p>
+        </div>
+        <div class="pattern-card" style="border-top: 3px solid var(--color-actor-2)">
+          <div class="pattern-icon" style="background: var(--color-actor-2)">⚡</div>
+          <h4 class="pattern-title" data-i18n-key="m4-s5-pattern2-title" data-i18n-zh="并行获取" data-i18n-en="Parallel Fetching">并行获取</h4>
+          <p class="pattern-desc" data-i18n-key="m4-s5-pattern2-desc" data-i18n-zh="不是问一个问题、等待、然后问下一个——用 Promise.all 同时开始所有问题。总等待时间变成最慢的那个，而不是三个的总和。" data-i18n-en="Instead of asking one question, waiting, then asking the next — start all questions at once with Promise.all. The total wait time becomes the slowest one, not the sum of all three.">不是问一个问题、等待、然后问下一个——用 Promise.all 同时开始所有问题。总等待时间变成最慢的那个，而不是三个的总和。</p>
+        </div>
+        <div class="pattern-card" style="border-top: 3px solid var(--color-actor-3)">
+          <div class="pattern-icon" style="background: var(--color-actor-3)">🛡️</div>
+          <h4 class="pattern-title" data-i18n-key="m4-s5-pattern3-title" data-i18n-zh="参数化查询" data-i18n-en="Parameterized Queries">参数化查询</h4>
+          <p class="pattern-desc" data-i18n-key="m4-s5-pattern3-desc" data-i18n-zh="当你在搜索「发票 #123」时，搜索词与查询分开发送——就像给图书馆员一张密封信封里的纸条。这可以防止 SQL 注入。" data-i18n-en="When you search for &quot;invoice #123&quot;, the search term gets sent separately from the query — like giving the librarian a note in a sealed envelope. This prevents SQL injection.">当你在搜索「发票 #123」时，搜索词与查询分开发送——就像给图书馆员一张密封信封里的纸条。这可以防止 SQL 注入。</p>
+        </div>
+      </div>
+
+      <div class="text-block">
+        <p data-i18n-key="m4-s5-p1" data-i18n-zh="注意 <code>fetchFilteredInvoices</code> 如何将 ILIKE 与参数一起使用：<code>${`%${query}%`}</code>。<code>%</code> 符号意味着「包含」——所以搜索「inv」会找到「invoice」、「invitation」等。" data-i18n-en="Notice how <code>fetchFilteredInvoices</code> uses ILIKE with a parameter: <code>${`%${query}%`}</code>. The <code>%</code> signs mean &quot;contains&quot; — so searching &quot;inv&quot; finds &quot;invoice&quot;, &quot;invitation&quot;, etc.">注意 <code>fetchFilteredInvoices</code> 如何将 ILIKE 与参数一起使用：<code>${`%${query}%`}</code>。<code>%</code> 符号意味着「包含」——所以搜索「inv」会找到「invoice」、「invitation」等。</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SCREEN 6: Numbered Step Cards — The Full Journey -->
+  <div class="screen" id="module-4-screen-6">
+    <div class="screen-content">
+
+      <h2 class="screen-heading" data-i18n-key="m4-s6-heading" data-i18n-zh="从点击到内容：完整旅程" data-i18n-en="From Click to Content: The Full Journey">从点击到内容：完整旅程</h2>
+
+      <div class="step-cards">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <strong data-i18n-key="m4-s6-step1-strong" data-i18n-zh="用户点击链接或刷新 /dashboard" data-i18n-en="User clicks a link or refreshes /dashboard">用户点击链接或刷新 /dashboard</strong>
+            <p data-i18n-key="m4-s6-step1-p" data-i18n-zh="浏览器向服务器请求仪表板页面" data-i18n-en="The browser asks the server for the dashboard page">浏览器向服务器请求仪表板页面</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <strong data-i18n-key="m4-s6-step2-strong" data-i18n-zh="服务器组件调用 fetch 函数" data-i18n-en="Server Component calls a fetch function">服务器组件调用一个 fetch 函数</strong>
+            <p data-i18n-key="m4-s6-step2-p" data-i18n-zh="在组件内部调用 <code>fetchRevenue()</code> 或 <code>fetchCardData()</code>——就像向图书馆员下订单" data-i18n-en="Inside the component, it calls <code>fetchRevenue()</code> or <code>fetchCardData()</code> — like placing an order with the librarian">在组件内部调用 <code>fetchRevenue()</code> 或 <code>fetchCardData()</code>——就像向图书馆员下订单</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <strong data-i18n-key="m4-s6-step3-strong" data-i18n-zh="函数向 PostgreSQL 发送 SQL 查询" data-i18n-en="The function sends a SQL query to PostgreSQL">函数向 PostgreSQL 发送 SQL 查询</strong>
+            <p data-i18n-key="m4-s6-step3-p" data-i18n-zh="使用标记模板字面量：<code>sql`SELECT * FROM revenue`</code>——数据库以它能理解的格式接收问题" data-i18n-en="Using a tagged template literal: <code>sql`SELECT * FROM revenue`</code> — the database receives the question in a structured format it understands">使用标记模板字面量：<code>sql`SELECT * FROM revenue`</code>——数据库以它能理解的格式接收问题</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <strong data-i18n-key="m4-s6-step4-strong" data-i18n-zh="数据库搜索并返回行" data-i18n-en="The database searches and returns rows">数据库搜索并返回行</strong>
+            <p data-i18n-key="m4-s6-step4-p" data-i18n-zh="数据库不思考——它只是检索匹配的行并发送回去" data-i18n-en="The database doesn't think — it just retrieves matching rows and sends them back">数据库不思考——它只是检索匹配的行并发送回去</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">5</div>
+          <div class="step-body">
+            <strong data-i18n-key="m4-s6-step5-strong" data-i18n-zh="组件接收数据并渲染 HTML" data-i18n-en="The component receives the data and renders HTML">组件接收数据并渲染 HTML</strong>
+            <p data-i18n-key="m4-s6-step5-p" data-i18n-zh="await 关键字在数据到达后解除阻塞，组件从结果构建 HTML" data-i18n-en="The await keyword unblocks once the data arrives, and the component builds HTML from the results">await 关键字在数据到达后解除阻塞，组件从结果构建 HTML</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">6</div>
+          <div class="step-body">
+            <strong data-i18n-key="m4-s6-step6-strong" data-i18n-zh="浏览器显示完全渲染的页面" data-i18n-en="The browser displays the fully rendered page">浏览器显示完全渲染的页面</strong>
+            <p data-i18n-key="m4-s6-step6-p" data-i18n-zh="这部分不需要客户端 JavaScript——服务器发送了完整的 HTML" data-i18n-en="No client-side JavaScript needed for this part — the server sent complete HTML">这部分不需要客户端 JavaScript——服务器发送了完整的 HTML</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-info">
+        <div class="callout-icon">ℹ️</div>
+        <div class="callout-content">
+          <strong class="callout-title" data-i18n-key="m4-s6-callout-title" data-i18n-zh="为什么不需要 API 路由？" data-i18n-en="Why No API Route?">为什么不需要 API 路由？</strong>
+          <p data-i18n-key="m4-s6-callout-p" data-i18n-zh="在传统的网络应用中，你需要像 <code>/api/revenue</code> 这样的 API 端点。App Router 让服务器组件跳过这一步——它们直接与数据库对话，就像图书馆员无需中间人就能伸手到书架上取书。" data-i18n-en="In traditional web apps, you'd need an API endpoint like <code>/api/revenue</code>. App Router lets Server Components skip that step — they talk to the database directly, just like a librarian reaching into the stacks without a middleman.">在传统的网络应用中，你需要像 <code>/api/revenue</code> 这样的 API 端点。App Router 让服务器组件跳过这一步——它们直接与数据库对话，就像图书馆员无需中间人就能伸手到书架上取书。</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SCREEN 7: Quiz -->
+  <div class="screen" id="module-4-screen-7">
+    <div class="screen-content">
+
+      <h2 class="screen-heading" data-i18n-key="m4-s7-heading" data-i18n-zh="检查你的理解" data-i18n-en="Check Your Understanding">检查你的理解</h2>
+
+      <div class="quiz-container" id="quiz-module4">
+        <div class="quiz-question-block"
+             data-correct="option-b"
+             data-explanation-right="Exactly — Promise.all starts all three queries simultaneously. If each takes 100ms, sequential would be 300ms total, but parallel is only 100ms. That's the performance win."
+             data-explanation-wrong="Not quite. Promise.all is about speed — it starts all three queries at once instead of waiting for each one to finish before starting the next.">
+          <h3 class="quiz-question" data-i18n-key="m4-s7-q1" data-i18n-zh="为什么 fetchCardData 使用 Promise.all 而不是逐个调用每个查询？" data-i18n-en="Why does fetchCardData use Promise.all instead of calling each query one after another?">为什么 fetchCardData 使用 Promise.all 而不是逐个调用每个查询？</h3>
+          <div class="quiz-options">
+            <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+              <div class="quiz-option-radio"></div>
+              <span data-i18n-key="m4-s7-q1-a" data-i18n-zh="这是 postgres 库的要求——你没有其他方式调用 sql 查询" data-i18n-en="It's required by the postgres library — you can't call sql queries any other way">这是 postgres 库的要求——你没有其他方式调用 sql 查询</span>
+            </button>
+            <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+              <div class="quiz-option-radio"></div>
+              <span data-i18n-key="m4-s7-q1-b" data-i18n-zh="同时开始三个查询要快得多——总等待时间变成最慢的查询，而不是三个的总和" data-i18n-en="Starting all three at once is much faster — the total wait time becomes the slowest query, not the sum of all three">同时开始三个查询要快得多——总等待时间变成最慢的查询，而不是三个的总和</span>
+            </button>
+            <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+              <div class="quiz-option-radio"></div>
+              <span data-i18n-key="m4-s7-q1-c" data-i18n-zh="Promise.all 通过加密查询来防止 SQL 注入" data-i18n-en="Promise.all prevents SQL injection by encrypting the queries">Promise.all 通过加密查询来防止 SQL 注入</span>
+            </button>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+
+        <div class="quiz-question-block"
+             data-correct="option-c"
+             data-explanation-right="Correct — you'd add another SUM with a CASE condition for refunds, same pattern as paid/pending. The parameterized template literal handles the value safely."
+             data-explanation-wrong="Think about the existing query: it uses CASE WHEN status = 'paid' THEN amount ELSE 0 END to calculate totals. A refund stat would follow the same pattern with a 'refunded' status condition.">
+          <h3 class="quiz-question" data-i18n-key="m4-s7-q2" data-i18n-zh="你要在仪表板卡片中添加一个「退款总额」统计。在 fetchCardData 中你会使用哪种 SQL 模式？" data-i18n-en="You're adding a &quot;total refunds&quot; stat to the dashboard cards. Which SQL pattern would you use inside fetchCardData?">你要在仪表板卡片中添加一个「退款总额」统计。在 fetchCardData 中你会使用哪种 SQL 模式？</h3>
+          <div class="quiz-options">
+            <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+              <div class="quiz-option-radio"></div>
+              <span data-i18n-key="m4-s7-q2-a" data-i18n-zh="调用一个名为 fetchRefunds() 的新 fetch 函数——让它与其他卡片查询完全分开" data-i18n-en="Call a new fetch function called fetchRefunds() — keep it completely separate from the other card queries">调用一个名为 fetchRefunds() 的新 fetch 函数——让它与其他卡片查询完全分开</span>
+            </button>
+            <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+              <div class="quiz-option-radio"></div>
+              <span data-i18n-key="m4-s7-q2-b" data-i18n-zh="使用字符串连接添加一个新的 sql 查询：sql`SELECT * FROM refunds WHERE amount = '` + refundAmount + `'`" data-i18n-en="Add a new sql query using string concatenation: sql`SELECT * FROM refunds WHERE amount = '` + refundAmount + `'`">使用字符串连接添加一个新的 sql 查询：sql`SELECT * FROM refunds WHERE amount = '` + refundAmount + `'`</span>
+            </button>
+            <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+              <div class="quiz-option-radio"></div>
+              <span data-i18n-key="m4-s7-q2-c" data-i18n-zh="添加另一个带有 CASE 条件的参数化 SUM 查询，用于已退款的发票，类似于已支付/待处理的模式" data-i18n-en="Add another parameterized SUM query with a CASE condition for refunded invoices, similar to the paid/pending pattern">添加另一个带有 CASE 条件的参数化 SUM 查询，用于已退款的发票，类似于已支付/待处理的模式</span>
+            </button>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+
+        <div class="quiz-question-block"
+             data-correct="option-b"
+             data-explanation-right="Right — template literals send the query structure and the values separately, like a sealed envelope. String concatenation smashes them together, letting hackers inject malicious code into the query itself."
+             data-explanation-wrong="String concatenation is dangerous — if a hacker types something like ' OR '1'='1 in the search box, it could change the entire meaning of the query. Template literals keep the query structure and user input separate.">
+          <h3 class="quiz-question" data-i18n-key="m4-s7-q3" data-i18n-zh="为什么 ILIKE 搜索使用模板字面量如 ${`%${query}%`} 而不是字符串连接如 `ILIKE '%` + query + `%``？" data-i18n-en="Why does the ILIKE search use template literals like ${`%${query}%`} instead of string concatenation like `ILIKE '%` + query + `%``?">为什么 ILIKE 搜索使用模板字面量如 ${`%${query}%`} 而不是字符串连接如 `ILIKE '%` + query + `%``？</h3>
+          <div class="quiz-options">
+            <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+              <div class="quiz-option-radio"></div>
+              <span data-i18n-key="m4-s7-q3-a" data-i18n-zh="模板字面量在 JavaScript 中更快——字符串连接已被弃用" data-i18n-en="Template literals are faster in JavaScript — string concatenation is deprecated">模板字面量在 JavaScript 中更快——字符串连接已被弃用</span>
+            </button>
+            <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+              <div class="quiz-option-radio"></div>
+              <span data-i18n-key="m4-s7-q3-b" data-i18n-zh="模板字面量将查询结构与用户输入分开——防止黑客注入恶意 SQL 代码" data-i18n-en="Template literals separate the query structure from user input — preventing hackers from injecting malicious SQL code">模板字面量将查询结构与用户输入分开——防止黑客注入恶意 SQL 代码</span>
+            </button>
+            <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+              <div class="quiz-option-radio"></div>
+              <span data-i18n-key="m4-s7-q3-c" data-i18n-zh="两种方法效果相同——纯粹是风格选择" data-i18n-en="Both approaches work identically — it's purely a stylistic choice">两种方法效果相同——纯粹是风格选择</span>
+            </button>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+
+        <button class="quiz-check-btn" onclick="checkQuiz('quiz-module4')" data-i18n-key="m4-s7-btn-check" data-i18n-zh="检查答案" data-i18n-en="Check Answers">检查答案</button>
+        <button class="quiz-reset-btn" onclick="resetQuiz('quiz-module4')" data-i18n-key="m4-s7-btn-retry" data-i18n-zh="再试一次" data-i18n-en="Try Again">再试一次</button>
+      </div>
+
+    </div>
+  </div>
+
+</section>

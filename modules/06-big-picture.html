@@ -1,0 +1,583 @@
+<section class="module" id="module-6" style="background: var(--color-bg-warm)">
+
+  <!-- ══════════════════════════════════════════════════════════════
+       MODULE HEADER
+  ══════════════════════════════════════════════════════════════ -->
+  <header class="module-header module-content">
+    <span class="module-number">06</span>
+    <h1 class="module-title" data-i18n-key="m6-title" data-i18n-zh="全局视角 — 一切如何连接" data-i18n-en="The Big Picture">The Big Picture</h1>
+    <p class="module-subtitle" data-i18n-key="m6-subtitle" data-i18n-zh="从 URL 到数据库再返回——完整的数据流" data-i18n-en="How everything connects — from URL to database and back">How everything connects — from URL to database and back</p>
+  </header>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SCREEN 1 — The City Under the Streets
+  ══════════════════════════════════════════════════════════════ -->
+  <div class="screen">
+    <div class="module-content">
+
+      <h2 class="screen-heading" data-i18n-key="m6s1-heading" data-i18n-zh="地下之城" data-i18n-en="A City Under the Streets">A City Under the Streets</h2>
+
+      <p data-i18n-key="m6s1-p1" data-i18n-zh="每次你点击链接或提交表单时，无形的基础设施就会启动——管道按顺序工作，你从未见过。把它想象成城市基础设施：你打开水龙头的那一刻，整个水库、泵站和管道系统就会输送水——你不需要知道它是如何运作的。" data-i18n-en="Every time you click a link or submit a form, invisible infrastructure springs into action — pipes you never see, working in sequence. Think of it like city infrastructure: the moment you turn on a tap, a whole system of reservoirs, pumps, and pipes delivers water — without you needing to know any of it exists.">
+        Every time you click a link or submit a form, invisible infrastructure springs into action — pipes you never see, working in sequence. Think of it like
+        <span class="term" data-definition="The hidden network of pipes, wires, and tunnels that move water, electricity, and data beneath a city — out of sight but always working.">city infrastructure</span>:
+        the moment you turn on a tap, a whole system of reservoirs, pumps, and pipes delivers water — without you needing to know any of it exists.
+      </p>
+
+      <p data-i18n-key="m6s1-p2" data-i18n-zh="路由是第一个管道。App Router 自动将 URL 连接到代码。缓存是 Next.js 保持准备的预构建页面堆疊，这样每次访问时不必从零开始。" data-i18n-en="The routing is the first pipe. The App Router connects URLs to code automatically. And cache is the stack of pre-built pages Next.js keeps ready so it doesn't start from scratch on every visit.">
+        The <span class="term" data-definition="The system that maps folder names to URL paths — app/dashboard/page.tsx becomes /dashboard. You create routes by creating folders.">routing</span> is the first pipe. The
+        <span class="term" data-definition="The modern Next.js system where folders define routes and files provide UI. Server Components are the default — no extra code needed.">App Router</span> connects URLs to code automatically. And
+        <span class="term" data-definition="Temporary storage of HTML pages or data so the server doesn't have to rebuild them on every request — like keeping a copy of a prepared document on your desk.">cache</span> is the stack of pre-built pages Next.js keeps ready so it doesn't start from scratch on every visit.
+      </p>
+
+      <p data-i18n-key="m6s1-p3" data-i18n-zh="这是你的数据通过 Next.js App Router 应用的完整旅程。" data-i18n-en="Here's the complete journey your data takes through a Next.js App Router app.">Here's the complete journey your data takes through a Next.js App Router app.</p>
+
+      <div class="icon-rows">
+        <div class="icon-row">
+          <div class="icon-circle" style="background: var(--color-actor-1)">🌐</div>
+          <div>
+            <strong data-i18n-key="m6s1-icon1-strong" data-i18n-zh="浏览器" data-i18n-en="Browser">Browser</strong>
+            <p data-i18n-key="m6s1-icon1-p" data-i18n-zh="你的用户所在的地方——他们看到的页面和点击的内容" data-i18n-en="Where your user lives — the page they see and click">Where your user lives — the page they see and click</p>
+          </div>
+        </div>
+        <div class="icon-row">
+          <div class="icon-circle" style="background: var(--color-actor-2)">⚙️</div>
+          <div>
+            <strong data-i18n-key="m6s1-icon2-strong" data-i18n-zh="Next.js 服务器" data-i18n-en="Next.js Server">Next.js Server</strong>
+            <p data-i18n-key="m6s1-icon2-p" data-i18n-zh="交通控制器，将每个请求路由到正确的位置" data-i18n-en="The traffic controller that routes every request to the right place">The traffic controller that routes every request to the right place</p>
+          </div>
+        </div>
+        <div class="icon-row">
+          <div class="icon-circle" style="background: var(--color-actor-3)">🧩</div>
+          <div>
+            <strong data-i18n-key="m6s1-icon3-strong" data-i18n-zh="服务器组件" data-i18n-en="Server Components">Server Components</strong>
+            <p data-i18n-key="m6s1-icon3-p" data-i18n-zh="在服务器上运行的代码，获取数据并构建页面" data-i18n-en="Code that runs on the server, fetches data, and builds the page">Code that runs on the server, fetches data, and builds the page</p>
+          </div>
+        </div>
+        <div class="icon-row">
+          <div class="icon-circle" style="background: var(--color-actor-4)">🗄️</div>
+          <div>
+            <strong data-i18n-key="m6s1-icon4-strong" data-i18n-zh="数据库" data-i18n-en="Database">Database</strong>
+            <p data-i18n-key="m6s1-icon4-p" data-i18n-zh="所有数据永久存储的地方——发票、收入、用户" data-i18n-en="Where all your data lives permanently — invoices, revenue, users">Where all your data lives permanently — invoices, revenue, users</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-accent">
+        <div class="callout-icon">💡</div>
+        <div class="callout-content">
+          <strong class="callout-title" data-i18n-key="m6s1-callout-title" data-i18n-zh="关键洞察" data-i18n-en="Key Insight">Key Insight</strong>
+          <p data-i18n-key="m6s1-callout-p" data-i18n-zh="在 Next.js App Router 中，前端和后端之间的界限模糊了。服务器组件就是 API——大多数情况下不需要单独的 API 路由。" data-i18n-en="In Next.js App Router, the line between frontend and backend is blurred. Server Components ARE the API — no separate API routes needed for most cases.">In Next.js App Router, the line between frontend and backend is blurred. Server Components ARE the API — no separate API routes needed for most cases.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SCREEN 2 — Interactive Architecture Diagram
+  ══════════════════════════════════════════════════════════════ -->
+  <div class="screen">
+    <div class="module-content">
+
+      <h2 class="screen-heading" data-i18n-key="m6s2-heading" data-i18n-zh="完整系统架构" data-i18n-en="The Full System Architecture">The Full System Architecture</h2>
+
+      <p data-i18n-key="m6s2-p1" data-i18n-zh="Acme 项目中的每个组件都有其角色。点击任何框以了解其功能。" data-i18n-en="Every component in the Acme project has a role. Click any box to learn what it does.">Every component in the Acme project has a role. Click any box to learn what it does.</p>
+
+      <div class="arch-diagram">
+        <div class="arch-zone arch-zone-browser">
+          <h4 class="arch-zone-label" data-i18n-key="m6s2-zone1" data-i18n-zh="浏览器 — 用户看到的内容" data-i18n-en="Browser — What the user sees">Browser — What the user sees</h4>
+          <div class="arch-component" data-desc="The Next.js URL you visit — defined by folder names, not code. /dashboard shows the dashboard." onclick="showArchDesc(this)">
+            <div class="arch-icon">📍</div>
+            <span>URL Path</span>
+          </div>
+          <div class="arch-component" data-desc="HTML elements generated by React — buttons, forms, charts. Lives in the browser's memory as the DOM." onclick="showArchDesc(this)">
+            <div class="arch-icon">🖥️</div>
+            <span>DOM / UI</span>
+          </div>
+        </div>
+
+        <div class="arch-zone arch-zone-external">
+          <h4 class="arch-zone-label" data-i18n-key="m6s2-zone2" data-i18n-zh="Next.js 服务器 — 指挥者" data-i18n-en="Next.js Server — The conductor">Next.js Server — The conductor</h4>
+          <div class="arch-component" data-desc="Special files that wrap pages in shared UI — the sidenav, header, and layout around every route." onclick="showArchDesc(this)">
+            <div class="arch-icon">📦</div>
+            <span>layout.tsx</span>
+          </div>
+          <div class="arch-component" data-desc="The routing system uses folder names to map URLs to files. No config file needed — the folder structure IS the routing." onclick="showArchDesc(this)">
+            <div class="arch-icon">🗂️</div>
+            <span>App Router</span>
+          </div>
+          <div class="arch-component" data-desc="A Next.js function that clears the cache for a specific route, forcing the next visit to fetch fresh data." onclick="showArchDesc(this)">
+            <div class="arch-icon">🔄</div>
+            <span>revalidatePath</span>
+          </div>
+        </div>
+
+        <div class="arch-zone arch-zone-external">
+          <h4 class="arch-zone-label" data-i18n-key="m6s2-zone3" data-i18n-zh="服务器组件 — 工作者" data-i18n-en="Server Components — The workers">Server Components — The workers</h4>
+          <div class="arch-component" data-desc="React components that run only on the server. They fetch data, query the database, and return HTML. Default in App Router — no special tag needed." onclick="showArchDesc(this)">
+            <div class="arch-icon">⚡</div>
+            <span>Server Components</span>
+          </div>
+          <div class="arch-component" data-desc="React components that run in the browser. Required only when you need interactivity — click handlers, useState, useEffect." onclick="showArchDesc(this)">
+            <div class="arch-icon">🎮</div>
+            <span>Client Components</span>
+          </div>
+          <div class="arch-component" data-desc="Functions marked with use server that handle form submissions and database writes — run on the server, called from the client." onclick="showArchDesc(this)">
+            <div class="arch-icon">🚀</div>
+            <span>Server Actions</span>
+          </div>
+        </div>
+
+        <div class="arch-zone arch-zone-external">
+          <h4 class="arch-zone-label" data-i18n-key="m6s2-zone4" data-i18n-zh="后台 — 数据存储的地方" data-i18n-en="Backstage — Where data lives">Backstage — Where data lives</h4>
+          <div class="arch-component" data-desc="A plain JavaScript file that contains SQL queries, data-fetching functions, and server action logic — the bridge between components and the database." onclick="showArchDesc(this)">
+            <div class="arch-icon">🔧</div>
+            <span>app/lib/</span>
+          </div>
+          <div class="arch-component" data-desc="A hosted Postgres database that stores invoices, revenue, and user data. Components query it using SQL." onclick="showArchDesc(this)">
+            <div class="arch-icon">🗄️</div>
+            <span>Database</span>
+          </div>
+        </div>
+
+        <div class="arch-description" id="arch-desc" data-i18n-key="m6s2-arch-desc" data-i18n-zh="点击任何组件以了解其功能" data-i18n-en="Click any component to learn what it does">Click any component to learn what it does</div>
+      </div>
+
+      <!-- Arrow annotation for data flow -->
+      <div class="flow-steps" style="margin-top: var(--space-6)">
+        <div class="flow-step">
+          <div class="step-num" style="background: var(--color-actor-1)">1</div>
+          <p data-i18n-key="m6s2-flow1" data-i18n-zh="浏览器访问 URL" data-i18n-en="Browser visits URL" style="max-width:140px">Browser visits URL</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="step-num" style="background: var(--color-actor-2)">2</div>
+          <p data-i18n-key="m6s2-flow2" data-i18n-zh="Next.js 路由到正确的文件夹" data-i18n-en="Next.js routes to correct folder" style="max-width:140px">Next.js routes to correct folder</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="step-num" style="background: var(--color-actor-3)">3</div>
+          <p data-i18n-key="m6s2-flow3" data-i18n-zh="服务器组件获取数据" data-i18n-en="Server Component fetches data" style="max-width:140px">Server Component fetches data</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="step-num" style="background: var(--color-actor-4)">4</div>
+          <p data-i18n-key="m6s2-flow4" data-i18n-zh="数据库返回数据" data-i18n-en="Database returns data" style="max-width:140px">Database returns data</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="step-num" style="background: var(--color-actor-5)">5</div>
+          <p data-i18n-key="m6s2-flow5" data-i18n-zh="HTML 发送到浏览器" data-i18n-en="HTML sent to browser" style="max-width:140px">HTML sent to browser</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SCREEN 3 — Data Flow Animation (READ: visit /dashboard)
+  ══════════════════════════════════════════════════════════════ -->
+  <div class="screen">
+    <div class="module-content">
+
+      <h2 class="screen-heading" data-i18n-key="m6s3-heading" data-i18n-zh="数据流：读取数据" data-i18n-en="Data Flow: Reading Data">Data Flow: Reading Data</h2>
+
+      <p data-i18n-key="m6s3-p1" data-i18n-zh="追踪用户访问 <code>/dashboard</code> 时每一步发生的事情。" data-i18n-en="Trace every step of what happens when a user visits <code>/dashboard</code>.">Trace every step of what happens when a user visits <code>/dashboard</code>.</p>
+
+      <div class="flow-animation" data-steps='[
+        {"highlight":"flow-browser","label":"User types /dashboard into the browser"},
+        {"highlight":"flow-browser","label":"Browser sends request to Next.js Server","packet":true,"from":"browser","to":"nextserver"},
+        {"highlight":"flow-nextserver","label":"Next.js looks at URL path — maps /dashboard to app/dashboard/ folder","packet":true,"from":"nextserver","to":"layout"},
+        {"highlight":"flow-layout","label":"layout.tsx renders the SideNav — the sidebar navigation","packet":true,"from":"layout","to":"sidenav"},
+        {"highlight":"flow-page","label":"page.tsx calls fetchRevenue() from app/lib/data.ts","packet":true,"from":"page","to":"lib"},
+        {"highlight":"flow-lib","label":"lib/data.ts runs a SQL query against the database","packet":true,"from":"lib","to":"database"},
+        {"highlight":"flow-database","label":"Database returns revenue rows — invoices, amounts, dates","packet":true,"from":"database","to":"lib"},
+        {"highlight":"flow-lib","label":"Data flows back up to the Server Component","packet":true,"from":"lib","to":"page"},
+        {"highlight":"flow-page","label":"Component renders HTML with the revenue chart","packet":true,"from":"page","to":"nextserver"},
+        {"highlight":"flow-nextserver","label":"Next.js sends the complete HTML page to the browser","packet":true,"from":"nextserver","to":"browser"},
+        {"highlight":"flow-browser","label":"User sees the dashboard — sidenav, revenue chart, invoice table"}
+      ]'>
+        <div class="flow-actors">
+          <div class="flow-actor" id="flow-browser">
+            <div class="flow-actor-icon" style="background: var(--color-actor-1)">🌐</div>
+            <span>Browser</span>
+          </div>
+          <div class="flow-actor" id="flow-nextserver">
+            <div class="flow-actor-icon" style="background: var(--color-actor-2)">⚙️</div>
+            <span>Next.js Server</span>
+          </div>
+          <div class="flow-actor" id="flow-layout">
+            <div class="flow-actor-icon" style="background: var(--color-actor-2)">📦</div>
+            <span>layout.tsx</span>
+          </div>
+          <div class="flow-actor" id="flow-page">
+            <div class="flow-actor-icon" style="background: var(--color-actor-3)">🧩</div>
+            <span>Server Component</span>
+          </div>
+          <div class="flow-actor" id="flow-lib">
+            <div class="flow-actor-icon" style="background: var(--color-actor-3)">🔧</div>
+            <span>app/lib/</span>
+          </div>
+          <div class="flow-actor" id="flow-database">
+            <div class="flow-actor-icon" style="background: var(--color-actor-4)">🗄️</div>
+            <span>Database</span>
+          </div>
+        </div>
+        <div class="flow-packet"></div>
+        <div class="flow-step-label" data-i18n-key="m6s3-flow-label" data-i18n-zh="点击"下一步"开始旅程" data-i18n-en="Click "Next Step" to begin the journey">Click "Next Step" to begin the journey</div>
+        <div class="flow-controls">
+          <button class="btn flow-next-btn" data-i18n-key="m6s3-btn-next" data-i18n-zh="下一步" data-i18n-en="Next Step">Next Step</button>
+          <button class="btn flow-reset-btn" data-i18n-key="m6s3-btn-restart" data-i18n-zh="重新开始" data-i18n-en="Restart">Restart</button>
+          <span class="flow-progress"></span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SCREEN 4 — Data Flow Animation (WRITE: Create Invoice)
+  ══════════════════════════════════════════════════════════════ -->
+  <div class="screen">
+    <div class="module-content">
+
+      <h2 class="screen-heading" data-i18n-key="m6s4-heading" data-i18n-zh="数据流：写入数据" data-i18n-en="Data Flow: Writing Data">Data Flow: Writing Data</h2>
+
+      <p data-i18n-key="m6s4-p1" data-i18n-zh="现在追踪用户点击<strong>创建发票</strong>并提交表单时会发生什么。" data-i18n-en="Now trace what happens when the user clicks <strong>Create Invoice</strong> and submits the form.">Now trace what happens when the user clicks <strong>Create Invoice</strong> and submits the form.</p>
+
+      <div class="flow-animation" data-steps='[
+        {"highlight":"flow-browser2","label":"User fills out the invoice form and clicks Create"},
+        {"highlight":"flow-browser2","label":"Browser sends form data to the Server Action","packet":true,"from":"browser2","to":"serveraction"},
+        {"highlight":"flow-serveraction","label":"Server Action runs — validates the form data"},
+        {"highlight":"flow-serveraction","label":"Inserts a new row into the invoices database table","packet":true,"from":"serveraction","to":"database2"},
+        {"highlight":"flow-database2","label":"Database confirms: row inserted successfully"},
+        {"highlight":"flow-serveraction","label":"revalidatePath clears the cache for /dashboard/invoices"},
+        {"highlight":"flow-serveraction","label":"redirect sends the browser to /dashboard/invoices"},
+        {"highlight":"flow-browser2","label":"Browser loads /dashboard/invoices — now with fresh data"}
+      ]'>
+        <div class="flow-actors">
+          <div class="flow-actor" id="flow-browser2">
+            <div class="flow-actor-icon" style="background: var(--color-actor-1)">🌐</div>
+            <span>Browser / Form</span>
+          </div>
+          <div class="flow-actor" id="flow-serveraction">
+            <div class="flow-actor-icon" style="background: var(--color-actor-3)">🚀</div>
+            <span>Server Action</span>
+          </div>
+          <div class="flow-actor" id="flow-database2">
+            <div class="flow-actor-icon" style="background: var(--color-actor-4)">🗄️</div>
+            <span>Database</span>
+          </div>
+        </div>
+        <div class="flow-packet"></div>
+        <div class="flow-step-label" data-i18n-key="m6s4-flow-label" data-i18n-zh="点击"下一步"查看表单提交的端到端过程" data-i18n-en="Click "Next Step" to see form submission end-to-end">Click "Next Step" to see form submission end-to-end</div>
+        <div class="flow-controls">
+          <button class="btn flow-next-btn" data-i18n-key="m6s4-btn-next" data-i18n-zh="下一步" data-i18n-en="Next Step">Next Step</button>
+          <button class="btn flow-reset-btn" data-i18n-key="m6s4-btn-restart" data-i18n-zh="重新开始" data-i18n-en="Restart">Restart</button>
+          <span class="flow-progress"></span>
+        </div>
+      </div>
+
+      <div class="translation-block animate-in" style="margin-top: var(--space-8)">
+        <div class="translation-code">
+          <span class="translation-label">CODE</span>
+          <pre><code><span class="code-line"><span class="code-keyword">'use server'</span>;</span>
+<span class="code-line"><span class="code-keyword">import</span> { revalidatePath } <span class="code-keyword">from</span> <span class="code-string">'next/cache'</span>;</span>
+<span class="code-line"><span class="code-keyword">import</span> { redirect } <span class="code-keyword">from</span> <span class="code-string">'next/navigation'</span>;</span>
+<span class="code-line"></span>
+<span class="code-line"><span class="code-keyword">export async function</span> <span class="code-function">createInvoice</span>(prevState, formData) {</span>
+<span class="code-line">  <span class="code-keyword">const</span> amount = <span class="code-function">Number</span>(formData.<span class="code-function">get</span>(<span class="code-string">'amount'</span>));</span>
+<span class="code-line">  <span class="code-comment">  // validate → insert → revalidatePath → redirect</span></span>
+<span class="code-line">  revalidatePath(<span class="code-string">'/dashboard/invoices'</span>);</span>
+<span class="code-line">  <span class="code-function">redirect</span>(<span class="code-string">'/dashboard/invoices'</span>);</span>
+<span class="code-line">}</span></code></pre>
+        </div>
+        <div class="translation-english">
+          <span class="translation-label">PLAIN ENGLISH</span>
+          <div class="translation-lines">
+            <p class="tl" data-i18n-key="m6s4-tl1" data-i18n-zh="将此文件标记为 Server Action——它仅在服务器上运行，绝不会在浏览器中运行" data-i18n-en="Marks this file as a Server Action — it runs only on the server, never in the browser">Marks this file as a Server Action — it runs only on the server, never in the browser</p>
+            <p class="tl" data-i18n-key="m6s4-tl2" data-i18n-zh="导入 revalidatePath：一个清除路由缓存数据的 Next.js 函数" data-i18n-en="Import revalidatePath: a Next.js function that wipes cached data for a route">Import revalidatePath: a Next.js function that wipes cached data for a route</p>
+            <p class="tl" data-i18n-key="m6s4-tl3" data-i18n-zh="导入 redirect：一个将用户发送到新 URL 的 Next.js 函数" data-i18n-en="Import redirect: a Next.js function that sends the user to a new URL">Import redirect: a Next.js function that sends the user to a new URL</p>
+            <p class="tl" data-i18n-key="m6s4-tl4" data-i18n-zh="导出的 createInvoice 函数——在表单提交时调用" data-i18n-en="The exported createInvoice function — called when a form is submitted">The exported createInvoice function — called when a form is submitted</p>
+            <p class="tl" data-i18n-key="m6s4-tl5" data-i18n-zh="从提交的表单数据中提取 amount 字段" data-i18n-en="Extract the amount field from the submitted form data">Extract the amount field from the submitted form data</p>
+            <p class="tl" data-i18n-key="m6s4-tl6" data-i18n-zh="三步舞：验证数据、写入数据库、然后清除旧缓存" data-i18n-en="The three-step dance: validate the data, write to DB, then clear the old cache">The three-step dance: validate the data, write to DB, then clear the old cache</p>
+            <p class="tl" data-i18n-key="m6s4-tl7" data-i18n-zh="清除 /dashboard/invoices 的缓存，以便下一次访问获取全新的发票" data-i18n-en="Wipe the cache for /dashboard/invoices so the next visit fetches the brand-new invoice">Wipe the cache for /dashboard/invoices so the next visit fetches the brand-new invoice</p>
+            <p class="tl" data-i18n-key="m6s4-tl8" data-i18n-zh="redirect 将浏览器发送到 /dashboard/invoices——现在显示 freshly 写入的数据" data-i18n-en="redirect sends the browser to /dashboard/invoices — which now shows the freshly written data">redirect sends the browser to /dashboard/invoices — which now shows the freshly written data</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SCREEN 5 — Pattern Cards: All Patterns Learned
+  ══════════════════════════════════════════════════════════════ -->
+  <div class="screen">
+    <div class="module-content">
+
+      <h2 class="screen-heading" data-i18n-key="m6s5-heading" data-i18n-zh="所有模式集中在一起" data-i18n-en="All the Patterns in One Place">All the Patterns in One Place</h2>
+
+      <p data-i18n-key="m6s5-p1" data-i18n-zh="六个主要模式贯穿每个模块。这是应用构建方式的完整地图。" data-i18n-en="Six major patterns run through every module. Here's the complete map of how the app is built.">Six major patterns run through every module. Here's the complete map of how the app is built.</p>
+
+      <div class="pattern-cards">
+        <div class="pattern-card" style="border-top-color: var(--color-actor-1)">
+          <div class="pattern-icon" style="background: var(--color-actor-1)">🗂️</div>
+          <h4 class="pattern-title" data-i18n-key="m6s5-pattern1-title" data-i18n-zh="基于文件的路由" data-i18n-en="File-Based Routing">File-Based Routing</h4>
+          <p class="pattern-desc" data-i18n-key="m6s5-pattern1-desc" data-i18n-zh="URL 就是文件夹。app/dashboard/page.tsx 就是 /dashboard——无需配置。" data-i18n-en="The URL is the folder. app/dashboard/page.tsx is /dashboard — no config needed.">The URL is the folder. app/dashboard/page.tsx is /dashboard — no config needed.</p>
+        </div>
+        <div class="pattern-card" style="border-top-color: var(--color-actor-2)">
+          <div class="pattern-icon" style="background: var(--color-actor-2)">⚡</div>
+          <h4 class="pattern-title" data-i18n-key="m6s5-pattern2-title" data-i18n-zh="服务器组件" data-i18n-en="Server Components">Server Components</h4>
+          <p class="pattern-desc" data-i18n-key="m6s5-pattern2-desc" data-i18n-zh="仅在服务器上运行的 React 组件。获取数据、查询数据库、返回 HTML。App Router 中的默认值。" data-i18n-en="React components that run only on the server. Fetch data, query the database, return HTML. Default in App Router.">React components that run only on the server. Fetch data, query the database, return HTML. Default in App Router.</p>
+        </div>
+        <div class="pattern-card" style="border-top-color: var(--color-actor-3)">
+          <div class="pattern-icon" style="background: var(--color-actor-3)">🎮</div>
+          <h4 class="pattern-title" data-i18n-key="m6s5-pattern3-title" data-i18n-zh="客户端组件" data-i18n-en="Client Components">Client Components</h4>
+          <p class="pattern-desc" data-i18n-key="m6s5-pattern3-desc" data-i18n-zh="在文件顶部添加 <code>'use client'</code>——此组件在浏览器中运行，处理点击、表单和状态。" data-i18n-en="Add <code>'use client'</code> at the top of a file — this component runs in the browser and handles clicks, forms, and state.">Add <code>'use client'</code> at the top of a file — this component runs in the browser and handles clicks, forms, and state.</p>
+        </div>
+        <div class="pattern-card" style="border-top-color: var(--color-actor-4)">
+          <div class="pattern-icon" style="background: var(--color-actor-4)">🚀</div>
+          <h4 class="pattern-title" data-i18n-key="m6s5-pattern4-title" data-i18n-zh="服务器操作" data-i18n-en="Server Actions">Server Actions</h4>
+          <p class="pattern-desc" data-i18n-key="m6s5-pattern4-desc" data-i18n-zh="用 <code>'use server'</code> 标记的函数，在服务器上运行，处理表单提交和数据库写入。" data-i18n-en="Functions marked with <code>'use server'</code> that run on the server and handle form submissions and database writes.">Functions marked with <code>'use server'</code> that run on the server and handle form submissions and database writes.</p>
+        </div>
+        <div class="pattern-card" style="border-top-color: var(--color-actor-5)">
+          <div class="pattern-icon" style="background: var(--color-actor-5)">🗃️</div>
+          <h4 class="pattern-title" data-i18n-key="m6s5-pattern5-title" data-i18n-zh="SQL 模板字面量" data-i18n-en="SQL Template Literals">SQL Template Literals</h4>
+          <p class="pattern-desc" data-i18n-key="m6s5-pattern5-desc" data-i18n-zh="作为标记模板字面量编写的原始 SQL 查询——与 Postgres 数据库对话的最简单方式。" data-i18n-en="Raw SQL queries written as tagged template literals — the simplest way to talk to a Postgres database.">Raw SQL queries written as tagged template literals — the simplest way to talk to a Postgres database.</p>
+        </div>
+        <div class="pattern-card" style="border-top-color: var(--color-actor-1)">
+          <div class="pattern-icon" style="background: var(--color-actor-1)">🔄</div>
+          <h4 class="pattern-title" data-i18n-key="m6s5-pattern6-title" data-i18n-zh="revalidatePath" data-i18n-en="revalidatePath">
+            <span class="term" data-definition="A Next.js function that wipes the cached HTML for a specific URL path, so the next visit fetches fresh data from the database.">revalidatePath</span>
+          </h4>
+          <p class="pattern-desc" data-i18n-key="m6s5-pattern6-desc" data-i18n-zh="一个 Next.js 函数，在数据库写入后清除路由的缓存——以便下一次访问显示新数据。" data-i18n-en="A Next.js function that clears the cache for a route after a database write — so the next visit shows fresh data.">A Next.js function that clears the cache for a route after a database write — so the next visit shows fresh data.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SCREEN 6 — File Tree: Connecting Back
+  ══════════════════════════════════════════════════════════════ -->
+  <div class="screen">
+    <div class="module-content">
+
+      <h2 class="screen-heading" data-i18n-key="m6s6-heading" data-i18n-zh="一切所在的位置" data-i18n-en="Where Everything Lives">Where Everything Lives</h2>
+
+      <p data-i18n-key="m6s6-p1" data-i18n-zh="文件夹结构不是任意的——每个目录都有其角色。这就是代码库如何映射到你一直在追踪的架构。" data-i18n-en="The folder structure isn't arbitrary — every directory has a role. This is how the codebase maps to the architecture you've been tracing.">The <span class="term" data-definition="The hierarchical arrangement of folders and files in a project. In Next.js App Router, the folder structure IS the URL routing — no config file needed.">folder structure</span> isn't arbitrary — every directory has a role. This is how the codebase maps to the architecture you've been tracing.</p>
+
+      <div class="file-tree">
+        <div class="ft-folder open">
+          <span class="ft-name">app/</span>
+          <span class="ft-desc">Routes and layouts — the public face of the app</span>
+          <div class="ft-children">
+            <div class="ft-folder">
+              <span class="ft-name">dashboard/</span>
+              <span class="ft-desc">The dashboard section — /dashboard</span>
+              <div class="ft-children">
+                <div class="ft-file">
+                  <span class="ft-name">page.tsx</span>
+                  <span class="ft-desc">Dashboard home — revenue charts (Module 4)</span>
+                </div>
+                <div class="ft-file">
+                  <span class="ft-name">invoices/page.tsx</span>
+                  <span class="ft-desc">Invoice list — Server Action form (Module 5)</span>
+                </div>
+                <div class="ft-file">
+                  <span class="ft-name">layout.tsx</span>
+                  <span class="ft-desc">Shared layout — SideNav wraps every dashboard page</span>
+                </div>
+              </div>
+            </div>
+            <div class="ft-file">
+              <span class="ft-name">page.tsx</span>
+              <span class="ft-desc">Home page — the Acme logo and login link</span>
+            </div>
+            <div class="ft-file">
+              <span class="ft-name">login/page.tsx</span>
+              <span class="ft-desc">Login page — Server Component (Module 3)</span>
+            </div>
+          </div>
+        </div>
+        <div class="ft-folder">
+          <span class="ft-name">app/lib/</span>
+          <span class="ft-desc">Backstage — data fetching, SQL, and Server Actions</span>
+          <div class="ft-children">
+            <div class="ft-file">
+              <span class="ft-name">data.ts</span>
+              <span class="ft-desc">fetchRevenue(), fetchInvoiceData() — called by Server Components (Module 4)</span>
+            </div>
+            <div class="ft-file">
+              <span class="ft-name">actions.ts</span>
+              <span class="ft-desc">createInvoice() — the Server Action (Module 5)</span>
+            </div>
+            <div class="ft-file">
+              <span class="ft-name">utils.ts</span>
+              <span class="ft-desc">formatCurrency() — shared utility used across the app</span>
+            </div>
+          </div>
+        </div>
+        <div class="ft-folder">
+          <span class="ft-name">app/ui/</span>
+          <span class="ft-desc">Costume shop — reusable visual components (Module 2)</span>
+          <div class="ft-children">
+            <div class="ft-file">
+              <span class="ft-name">dashboard/sidenav.tsx</span>
+              <span class="ft-desc">The sidebar navigation — a Server Component</span>
+            </div>
+            <div class="ft-file">
+              <span class="ft-name">invoices/create-form.tsx</span>
+              <span class="ft-desc">The invoice creation form — a Client Component (Module 5)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SCREEN 7 — Quiz
+  ══════════════════════════════════════════════════════════════ -->
+  <div class="screen">
+    <div class="module-content">
+
+      <h2 class="screen-heading" data-i18n-key="m6s7-heading" data-i18n-zh="测试你的理解" data-i18n-en="Test Your Understanding">Test Your Understanding</h2>
+
+      <p data-i18n-key="m6s7-p1" data-i18n-zh="四个调试和架构场景。为每个选择最佳答案。" data-i18n-en="Four debugging and architecture scenarios. Choose the best answer for each.">Four debugging and architecture scenarios. Choose the best answer for each.</p>
+
+      <div class="quiz-container" id="quiz-module6">
+
+        <!-- Q1: stale data -->
+        <div class="quiz-question-block"
+             data-correct="option-b"
+             data-explanation-right="The cache for /dashboard/invoices still holds the old data. revalidatePath wipes that cache, forcing the next visit to fetch fresh data from the DB."
+             data-explanation-wrong="The database is fine — the data was written successfully. The problem is Next.js is showing you old cached data instead of the fresh result.">
+          <h3 class="quiz-question" data-i18n-key="m6s7-q1" data-i18n-zh="用户报告仪表板显示过期数据，即使新发票已添加。可能是什么问题？" data-i18n-en="A user reports that the dashboard shows stale data even after new invoices are added. What is likely wrong?">A user reports that the dashboard shows stale data even after new invoices are added. What is likely wrong?</h3>
+          <div class="quiz-options">
+            <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+              <div class="quiz-option-radio"></div>
+              <span data-i18n-key="m6s7-q1-a" data-i18n-zh="数据库服务器宕机" data-i18n-en="The database server is down">The database server is down</span>
+            </button>
+            <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+              <div class="quiz-option-radio"></div>
+              <span data-i18n-key="m6s7-q1-b" data-i18n-zh="写入后缓存未被清除" data-i18n-en="The cache was not cleared after the write">The cache was not cleared after the write</span>
+            </button>
+            <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+              <div class="quiz-option-radio"></div>
+              <span data-i18n-key="m6s7-q1-c" data-i18n-zh="fetchRevenue 函数有错误" data-i18n-en="The fetchRevenue function has a bug">The fetchRevenue function has a bug</span>
+            </button>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+
+        <!-- Q2: where to add feature -->
+        <div class="quiz-question-block"
+             data-correct="option-c"
+             data-explanation-right="You need three pieces: the database query (app/lib/data.ts), the Server Component to display it (app/ui/), and a Client Component to handle the click event (app/ui/ with use client)."
+             data-explanation-wrong="Think through the full stack — you need a database query, a Server Component to display the result, AND a Client Component for the button interactivity.">
+          <h3 class="quiz-question" data-i18n-key="m6s7-q2" data-i18n-zh="你想在每个发票旁边添加一个"标记为已付"按钮。你需要接触哪些文件？" data-i18n-en="You want to add a "Mark as Paid" button next to each invoice. Which files would you need to touch?">You want to add a "Mark as Paid" button next to each invoice. Which files would you need to touch?</h3>
+          <div class="quiz-options">
+            <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+              <div class="quiz-option-radio"></div>
+              <span data-i18n-key="m6s7-q2-a" data-i18n-zh="仅 app/ui/invoices/table.tsx" data-i18n-en="Only app/ui/invoices/table.tsx">Only app/ui/invoices/table.tsx</span>
+            </button>
+            <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+              <div class="quiz-option-radio"></div>
+              <span data-i18n-key="m6s7-q2-b" data-i18n-zh="仅 app/lib/actions.ts" data-i18n-en="Only app/lib/actions.ts">Only app/lib/actions.ts</span>
+            </button>
+            <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+              <div class="quiz-option-radio"></div>
+              <span data-i18n-key="m6s7-q2-c" data-i18n-zh="app/lib/data.ts、app/ui/（显示）和带 use client 的 app/ui/（按钮）" data-i18n-en="app/lib/data.ts, app/ui/ (display), and app/ui/ with use client (button)">app/lib/data.ts, app/ui/ (display), and app/ui/ with use client (button)</span>
+            </button>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+
+        <!-- Q3: no /api route -->
+        <div class="quiz-question-block"
+             data-correct="option-b"
+             data-explanation-right="Server Components in app/lib/ and app/page.tsx are the backend — they fetch data and run SQL directly. In App Router, there's no /api/invoices route because Server Components ARE the API."
+             data-explanation-wrong="There IS a backend for invoices — it's just not in an /api/ folder. Server Components query the database directly, which is the App Router pattern.">
+          <h3 class="quiz-question" data-i18n-key="m6s7-q3" data-i18n-zh="为什么这个项目中没有 /api/invoices 路由？" data-i18n-en="Why is there no /api/invoices route in this project?">Why is there no /api/invoices route in this project?</h3>
+          <div class="quiz-options">
+            <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+              <div class="quiz-option-radio"></div>
+              <span data-i18n-key="m6s7-q3-a" data-i18n-zh="该应用根本没有后端" data-i18n-en="The app doesn't have a backend at all">The app doesn't have a backend at all</span>
+            </button>
+            <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+              <div class="quiz-option-radio"></div>
+              <span data-i18n-key="m6s7-q3-b" data-i18n-zh="服务器组件在 App Router 中取代了 API 路由" data-i18n-en="Server Components replace API routes in App Router">Server Components replace API routes in App Router</span>
+            </button>
+            <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+              <div class="quiz-option-radio"></div>
+              <span data-i18n-key="m6s7-q3-c" data-i18n-zh="Next.js 不再支持 API 路由" data-i18n-en="Next.js doesn't support API routes anymore">Next.js doesn't support API routes anymore</span>
+            </button>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+
+        <!-- Q4: countdown timer client or server -->
+        <div class="quiz-question-block"
+             data-correct="option-c"
+             data-explanation-right="A countdown timer needs to update every second in real time — this requires useState, useEffect, and setInterval, all of which only run in the browser. That's a Client Component."
+             data-explanation-wrong="Server Components run once when the page loads and produce HTML — they can't keep running in real time. A countdown needs a live JavaScript runtime in the browser.">
+          <h3 class="quiz-question" data-i18n-key="m6s7-q4" data-i18n-zh="一个组件需要显示实时倒数计时器。它在服务器上运行还是在客户端运行？" data-i18n-en="A component needs to display a countdown timer that ticks down in real time. Does it run on the server or the client?">A component needs to display a countdown timer that ticks down in real time. Does it run on the server or the client?</h3>
+          <div class="quiz-options">
+            <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+              <div class="quiz-option-radio"></div>
+              <span data-i18n-key="m6s7-q4-a" data-i18n-zh="在服务器上——服务器组件可以持续运行" data-i18n-en="On the server — Server Components can run continuously">On the server — Server Components can run continuously</span>
+            </button>
+            <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+              <div class="quiz-option-radio"></div>
+              <span data-i18n-key="m6s7-q4-b" data-i18n-zh="在服务器上——useEffect 在 App Router 中可以在服务器上工作" data-i18n-en="On the server — useEffect works on the server in App Router">On the server — useEffect works on the server in App Router</span>
+            </button>
+            <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+              <div class="quiz-option-radio"></div>
+              <span data-i18n-key="m6s7-q4-c" data-i18n-zh="在客户端——useState 和 useEffect 只在浏览器中运行" data-i18n-en="On the client — useState and useEffect only run in the browser">On the client — useState and useEffect only run in the browser</span>
+            </button>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+
+        <button class="quiz-check-btn" data-i18n-key="m6s7-btn-check" data-i18n-zh="检查答案" data-i18n-en="Check Answers" onclick="checkQuiz('quiz-module6')">Check Answers</button>
+        <button class="quiz-reset-btn" data-i18n-key="m6s7-btn-reset" data-i18n-zh="再试一次" data-i18n-en="Try Again" onclick="resetQuiz('quiz-module6')">Try Again</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SCREEN 8 — Closing: You Now Have the Map
+  ══════════════════════════════════════════════════════════════ -->
+  <div class="screen">
+    <div class="module-content">
+
+      <h2 class="screen-heading" data-i18n-key="m6s8-heading" data-i18n-zh="你现在有了地图" data-i18n-en="You Now Have the Map">You Now Have the Map</h2>
+
+      <p data-i18n-key="m6s8-p1" data-i18n-zh="你来的时候不知道什么是服务器组件。现在你可以追踪从 URL 到数据库再返回的请求——并再次返回。" data-i18n-en="You came in not knowing what a Server Component was. Now you can trace a request from URL to database and back — and back again.">
+        You came in not knowing what a Server Component was. Now you can trace a request from URL to database and back — and back again.
+      </p>
+
+      <div class="callout callout-info">
+        <div class="callout-icon">🗺️</div>
+        <div class="callout-content">
+          <strong class="callout-title" data-i18n-key="m6s8-callout-title" data-i18n-zh="调试超能力" data-i18n-en="The debugging superpower">The debugging superpower</strong>
+          <p data-i18n-key="m6s8-callout-p" data-i18n-zh="当出现问题时，你会准确知道该在哪里查看。数据错误？追踪回 SQL 查询。UI 卡住？检查客户端组件是否缺少 'use client'。显示旧数据？可能是忘了 revalidatePath。" data-i18n-en="When something breaks, you'll know exactly where to look. Is data wrong? Trace back through the SQL query. Is the UI frozen? Check if a Client Component is missing 'use client'. Is old data showing? revalidatePath was probably forgotten.">When something breaks, you'll know exactly where to look. Is data wrong? Trace back through the SQL query. Is the UI frozen? Check if a Client Component is missing 'use client'. Is old data showing? revalidatePath was probably forgotten.</p>
+        </div>
+      </div>
+
+      <p data-i18n-key="m6s8-p2" data-i18n-zh="本课程中的每个模块都为此做出了贡献。路由给了你结构。服务器组件给了你数据获取。服务器操作给了你写入路径。而 revalidatePath 关闭了循环。" data-i18n-en="Every module in this course fed into this one. The routing gave you the structure. The Server Components gave you the data fetching. The Server Actions gave you the write path. And revalidatePath closed the loop.">
+        Every module in this course fed into this one. The <span class="term" data-definition="The system that maps folder names to URL paths — app/dashboard/page.tsx becomes /dashboard. You create routes by creating folders.">routing</span> gave you the structure. The <span class="term" data-definition="React components that run on the server and return HTML — the default in Next.js App Router. No extra tag needed.">Server Components</span> gave you the data fetching. The <span class="term" data-definition="Functions marked with use server that handle form submissions and database writes. They run on the server, called from the browser.">Server Actions</span> gave you the write path. And <span class="term" data-definition="A Next.js function that wipes the cached HTML for a URL path, forcing the next visit to fetch fresh data from the database.">revalidatePath</span> closed the loop.
+      </p>
+
+      <p data-i18n-key="m6s8-p3" data-i18n-zh="当你坐下来向 AI 编程代理描述你想要构建什么时，你将说的是与代码本身相同的语言。这就是本课程的真正目的。" data-i18n-en="When you sit down with an AI coding agent and describe what you want to build, you'll be speaking the same language as the code itself. That's what this course was really about.">
+        When you sit down with an AI coding agent and describe what you want to build, you'll be speaking the same language as the code itself. That's what this course was really about.
+      </p>
+
+    </div>
+  </div>
+
+</section>
